@@ -15,21 +15,20 @@ struct ItemMarkerView: View {
 	@Binding var deletedLabelId : String
 	
 	@EnvironmentObject var dataContainer : DataContainer
+	@Environment(\.horizontalSizeClass) var horizontalSizeClass
 	
 	@State private var isPopoverVisible = false
+	@State private var isSheetVisible = false
 	@State private var itemName = ""
 	@State private var notes = ""
 	@State private var labelId = ""
 	@State private var label : Label?
-	
-	
 	@State private var dragOffset = CGSize.zero
-	
 	@State private var isDeleted = false
 	
 	private var onFocused : (_ item : Item)-> Void
 	
-	init(item: Binding<Item>, imageSize: Binding<CGSize>, zoomScale : Binding<CGFloat>, focusedItemId : Binding<String>, onFocused : @escaping (_ item : Item)->Void, deletedLabelId : Binding<String>) {
+	init(item: Binding<Item>, imageSize: Binding<CGSize>, zoomScale : Binding<CGFloat>, focusedItemId : Binding<String>, deletedLabelId : Binding<String>, onFocused : @escaping (_ item : Item)->Void) {
 		_item = item
 		_imageSize = imageSize
 		_focusedItemId = focusedItemId
@@ -38,27 +37,33 @@ struct ItemMarkerView: View {
 		_labelId = State(initialValue: item.wrappedValue.labelId)
 		_label = State(initialValue: item.wrappedValue.label())
 		_zoomScale = zoomScale
-		self.onFocused = onFocused
 		_deletedLabelId = deletedLabelId
+		self.onFocused = onFocused
 	}
 	
-	@State var offset : CGSize = .zero
+	func circleFill()->Color{
+		if self.label != nil {
+			return label!.labelColor
+		}
+		return Color.gray
+	}
 	
-
+	func toggleEditMark(){
+		if(horizontalSizeClass == .compact){
+			isSheetVisible.toggle()
+			
+		}else{
+			isPopoverVisible.toggle()
+		}
+		
+	}
+	
+	
 	var body: some View {
-		let circleFillColor: Color = {
-			
-				if self.label != nil {
-					return label!.labelColor
-				} else {
-					return Color.gray
-				}
-			
-		}()
 		
 		ZStack(){
 			Circle()
-				.fill(circleFillColor.opacity(focusedItemId == item.id ? 0.9 : 0.7 ))
+				.fill(circleFill().opacity(focusedItemId == item.id ? 0.9 : 0.7 ))
 				.overlay(
 					Circle()
 						.stroke(focusedItemId == item.id ? Color.white : Color.black.opacity(0.5) , lineWidth: 2) // Set stroke color and width of the circle
@@ -67,88 +72,19 @@ struct ItemMarkerView: View {
 			
 			// MARK: POPOVER
 				.popover(isPresented: $isPopoverVisible, arrowEdge: .top) {
-					VStack {
-						TextField("Item name", text: $itemName)
-							.textFieldStyle(.roundedBorder)
-						TextField("Notes", text: $notes)
-							.textFieldStyle(.roundedBorder)
-						
-						ScrollView(.horizontal, showsIndicators : false){
-							HStack{
-								ForEach(dataContainer.labels, id : \.id){
-									label in
-									HStack(spacing : 8){
-										Circle()
-											.fill(label.labelColor)
-											.contentShape(Circle())
-											.frame(width: 24, height: 24)
-											.overlay(
-												Circle()
-													.stroke(labelId == label.id ? Color.white : Color.clear , lineWidth : 2)
-											)
-										
-										Text(label.labelName)
-											
-									}
-									
-									.padding(8)
-									.background( labelId == label.id ? label.labelColor.opacity(0.3) : Color.clear )
-									.clipShape(
-										Capsule()
-									)
-									.onTapGesture {
-										if(labelId == label.id){
-											labelId = ""
-										}else{
-											labelId = label.id
-										}
-									}
-									.padding(1)
-								}
-								Spacer()
-							}
-							.frame(maxWidth: .infinity)
-							
-						}
-						.frame(width: 200)
-						
-//						.frame(width: 120, height:32)
-							
-						
-						HStack{
-							Button(action: {
-								item.delete()
-								isPopoverVisible.toggle()
-								withAnimation {
-									isDeleted.toggle()
-								}
-							}) {
-								Image(systemName: "trash")
-							}.buttonStyle(BorderedButtonStyle())
-							Spacer()
-							Button(action: {
-								item.itemName = itemName
-								item.notes = notes
-								item.labelId = labelId
-								self.label = Label.load(id: labelId)
-								item.save()
-								isPopoverVisible.toggle()
-							}) {
-								Image(systemName: "checkmark")
-							}.buttonStyle(BorderedProminentButtonStyle())
-						}
-					}
-					.padding(16)
+					UpdateMarkerSheet(itemName: $itemName, notes: $notes, labelId: $labelId, item: $item, isDeleted: $isDeleted, label: $label)
 				}
 			
 				.frame(width: 28, height: 28)
-				
+			
 				.onTapGesture {
 					
 					onFocused(item)
-					isPopoverVisible.toggle()
+					
+					toggleEditMark()
+					
 				}
-				
+			
 			
 			Text("\(item.itemName)")
 				.frame(height: 16)
@@ -171,7 +107,7 @@ struct ItemMarkerView: View {
 					
 					dragOffset = CGSize(width: value.translation.width / (imageSize.width ), height: value.translation.height / (imageSize.height ))
 				}
-	
+			
 				.onEnded { value in
 					let deltaX = value.translation.width
 					let deltaY = value.translation.height
@@ -195,7 +131,7 @@ struct ItemMarkerView: View {
 				label = nil
 			}
 		}
-	
+		
 	}
 }
 

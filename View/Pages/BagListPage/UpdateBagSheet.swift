@@ -29,25 +29,14 @@ struct UpdateBagSheet: View {
 					
 					Text("Bag Name")
 					TextField("Bag Name", text: $bagName)
-						.padding()
-						.background(Color(.systemBackground))
-						.cornerRadius(8)
-						.overlay(
-							RoundedRectangle(cornerRadius: 8)
-								.stroke(Color("lightGray"), lineWidth: 1) // Add a stroke with the primary color
-						)
+						.primaryStyled()
 				}
 				
 				VStack(alignment: .leading, spacing : 8) {
 					Text("Notes (optional)")
 					TextEditor(text: $notes)
-						.padding()
-						.background(Color(.systemBackground))
-						.cornerRadius(8)
-						.overlay(
-							RoundedRectangle(cornerRadius: 8)
-								.stroke(Color("lightGray"), lineWidth: 2) // Add a stroke with the primary color
-						).frame(height: 100)
+						.primaryStyled()
+						.frame(height: 100)
 				}
 				Spacer()
 			}

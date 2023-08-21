@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct LegendContainer: View {
-	@Binding var bag : Bag
-	
-	@Binding var selectedLabel : String
-	
 	@EnvironmentObject var dataContainer : DataContainer
 	
+	@Binding var bag : Bag
+	@Binding var selectedLabel : String
 	@Binding var isOpened : Bool
-	@State var isAddingNew = false
 	
+	@State var isAddingNew = false
 	@State var newLabelName = ""
 	@State var newLabelColor = Color.white
+	
 	@GestureState var dragOffset = CGSize.zero
 	
 	var onLabelDeletion : (_ : String, _ : Bag)->Void
@@ -88,7 +87,7 @@ struct LegendContainer: View {
 											
 											
 										}
-									
+										
 									}.padding(8)
 								}
 							
@@ -97,71 +96,7 @@ struct LegendContainer: View {
 						Divider()
 						
 						ScrollView{
-							VStack (spacing: 0) {
-								Button {
-									selectedLabel = ""
-								} label: {
-									HStack(spacing : 8) {
-										
-										Image(systemName: "circle.fill").foregroundColor(Color.gray)
-										
-										Text("All")
-											.foregroundColor(Color.black)
-										
-										Spacer()
-										
-									
-									}
-									.multilineTextAlignment(.leading)
-								}
-								.padding(4)
-								.background(
-									selectedLabel == "" ? Color.gray.opacity(0.5) : Color.clear
-								)
-								.clipShape(
-									RoundedRectangle(cornerRadius: 4)
-								)
-							
-								.frame(maxWidth: .infinity	)
-								
-								ForEach( dataContainer.labels, id:\.id ){
-									label in
-									
-									Button {
-										selectedLabel = label.id
-									} label: {
-										HStack(spacing : 8) {
-											
-											Image(systemName: "circle.fill").foregroundColor(label.labelColor)
-											
-											Text("\(label.labelName)")
-												.foregroundColor(Color.black)
-											
-											Spacer()
-											
-											Image(systemName: "trash").onTapGesture {
-												label.delete()
-												onLabelDeletion(label.id, bag)
-												dataContainer.labels = dataContainer.labels.filter({ originalLabel in
-													return originalLabel.id != label.id
-												})
-											}
-											.foregroundColor(Color.red)
-										}
-										.multilineTextAlignment(.leading)
-									}
-									.padding(4)
-									.background(
-										selectedLabel == label.id ? label.labelColor.opacity(0.5) : Color.clear
-									)
-									.clipShape(
-										RoundedRectangle(cornerRadius: 4)
-									)
-									.frame(maxWidth: .infinity	)
-								}
-							}
-							
-							
+							LabelContainer(bag: $bag, selectedLabel: $selectedLabel, onLabelDeletion: onLabelDeletion)
 						}
 					}
 					
@@ -176,16 +111,7 @@ struct LegendContainer: View {
 				.transition(AnyTransition.move(edge: .trailing))
 				.opacity(0.8)
 				
-				
 			}
-			
-		
 		}
 	}
 }
-//
-//struct Legend_Previews: PreviewProvider {
-//	static var previews: some View {
-//		Legend()
-//	}
-//}

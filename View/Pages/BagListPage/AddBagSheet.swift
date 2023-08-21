@@ -26,25 +26,14 @@ struct AddBagSheet: View {
 					
 					Text("Bag Name")
 					TextField("Bag Name", text: $bagName)
-						.padding(8)
-						.background(Color(.systemBackground))
-						.cornerRadius(8)
-						.overlay(
-							RoundedRectangle(cornerRadius: 8)
-								.stroke(Color("lightGray"), lineWidth: 1) // Add a stroke with the primary color
-						)
+						.primaryStyled()
+					
 				}
 				
 				VStack(alignment: .leading, spacing : 8) {
 					Text("Notes (optional)")
 					TextField("Notes", text: $notes)
-						.padding(8)
-						.background(Color(.systemBackground))
-						.cornerRadius(8)
-						.overlay(
-							RoundedRectangle(cornerRadius: 8)
-								.stroke(Color("lightGray"), lineWidth: 1) // Add a stroke with the primary color
-						)
+						.primaryStyled()
 				}
 				
 				VStack{
@@ -110,7 +99,7 @@ struct AddBagSheet: View {
 			)
 		}
 		.sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
-			ImagePicker(image: $image, sourceType: sourceType)
+			ImagePickerController(image: $image, sourceType: sourceType)
 		}
 		.actionSheet(isPresented: $isShowingActionSheet) {
 			ActionSheet(
@@ -143,42 +132,3 @@ struct AddBagSheet: View {
 	}
 }
 
-struct ImagePicker: UIViewControllerRepresentable {
-	@Environment(\.presentationMode) private var presentationMode
-	@Binding var image: UIImage?
-	var sourceType: UIImagePickerController.SourceType = .photoLibrary
-	
-	func makeCoordinator() -> Coordinator {
-		Coordinator(self)
-	}
-	
-	func makeUIViewController(context: Context) -> UIImagePickerController {
-		let imagePicker = UIImagePickerController()
-		imagePicker.sourceType = sourceType
-		imagePicker.delegate = context.coordinator
-		return imagePicker
-	}
-	
-	func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-		
-	}
-	
-	class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-		let parent: ImagePicker
-		
-		init(_ parent: ImagePicker) {
-			self.parent = parent
-		}
-		
-		func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-			if let selectedImage = info[.originalImage] as? UIImage {
-				parent.image = selectedImage
-			}
-			parent.presentationMode.wrappedValue.dismiss()
-		}
-		
-		func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-			parent.presentationMode.wrappedValue.dismiss()
-		}
-	}
-}

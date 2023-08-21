@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class AppColor{
-	static var INPUT_BG = "inpuBg"
-	static var LIGHT_GRAY = "lightGray"
-	static var MAIN_BLACK_TEXT = "mainBlackText"
-	static var MAIN_WHITE = "mainWhite"
+	static var INPUT_BG = Color("inpuBg")
+	static var LIGHT_GRAY = Color("lightGray")
+	static var MAIN_BLACK_TEXT = Color("mainBlackText")
+	static var MAIN_WHITE = Color("mainWhite")
 }

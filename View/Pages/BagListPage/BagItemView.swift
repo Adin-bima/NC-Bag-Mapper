@@ -52,7 +52,7 @@ struct BagItemView: View {
 				}) {
 					HStack(spacing : 8){
 						Image(systemName: "square.and.pencil")
-						Text("Update")
+						Text("Edit")
 					}
 				}
 				
