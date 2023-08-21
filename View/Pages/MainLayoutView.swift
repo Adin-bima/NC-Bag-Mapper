@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct MainLayout : View{
+struct MainLayoutView : View{
 	@EnvironmentObject var dataContainer : DataContainer
 	
 	@State var selectedBagId : String = ""
@@ -26,17 +26,14 @@ struct MainLayout : View{
 						Image(systemName: "plus")
 					})
 				)
-			} detail: {
-			MapView(selectedBagId: $selectedBagId)
-			
-			}.navigationBarBackButtonHidden()
-		
+		} detail: {
+			NoBagSelectedView()
+		}.navigationBarBackButtonHidden()
 			.onAppear(){
 				if(!dataContainer.setting.isOnboardingDone){
 					dataContainer.setting.isOnboardingDone.toggle()
 					dataContainer.setting.save()
 				}
 			}
-
 	}
 }

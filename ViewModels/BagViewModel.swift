@@ -31,4 +31,21 @@ class BagViewModel : ObservableObject{
 		items = bag.items()
 		self.deletedLabelId = deletedLabelId
 	}
+	
+	func onBagChange(newValue : Bag){
+		self.image = newValue.getImage()
+		self.items = newValue.items()
+		
+		self.scale = 1.0
+		self.lastScale = 1.0
+		self.position  = .zero
+		self.offset = .zero
+		self.lastOffset = .zero
+		self.lastPosition = .zero
+	}
+	
+	func onBagAppear(bag : Bag){
+		self.image = bag.getImage()
+		self.items = bag.items()
+	}
 }

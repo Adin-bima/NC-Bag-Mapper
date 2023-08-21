@@ -14,7 +14,6 @@ struct Sidebar: View {
 	@Binding var selectedBagId : String
 	@Binding var isShowingAddBagModal : Bool
 
-	
 	var body: some View {
 	
 		VStack(alignment : .leading, spacing: 8){

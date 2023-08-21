@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Action: View {
+struct ActionContainer: View {
 	@Binding var scale : CGFloat
 	@Binding var lastScale : CGFloat
 	@Binding var position : CGPoint
