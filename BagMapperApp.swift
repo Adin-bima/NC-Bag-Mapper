@@ -2,7 +2,7 @@ import SwiftUI
 
 
 @main
-struct MyApp: App {
+struct BagMapperApp: App {
 	@StateObject var dataContainer : DataContainer = DataContainer()
 	var body: some Scene {
 		WindowGroup {

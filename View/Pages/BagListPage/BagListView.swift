@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct Sidebar: View {
+struct BagListView: View {
 	@EnvironmentObject var dataContainer : DataContainer
 	
 	@Binding var selectedBagId : String
@@ -35,7 +35,7 @@ struct Sidebar: View {
 					ForEach ($dataContainer.bags.filter { $0.isFavorite.wrappedValue  }, id:\.id){
 						$bag in
 						NavigationLink(destination: BagView(bag : $bag) ){
-							BagItem(bag: $bag, selectedBagId: $selectedBagId)
+							BagItemView(bag: $bag, selectedBagId: $selectedBagId)
 						}
 					}
 				}
@@ -58,7 +58,7 @@ struct Sidebar: View {
 					ForEach ($dataContainer.bags.filter { !$0.isFavorite.wrappedValue  }, id:\.id){
 						$bag in
 						NavigationLink(destination: BagView(bag : $bag) ){
-							BagItem(bag: $bag, selectedBagId: $selectedBagId)
+							BagItemView(bag: $bag, selectedBagId: $selectedBagId)
 						}
 					}
 					
@@ -71,7 +71,7 @@ struct Sidebar: View {
 		}
 			
 		.sheet(isPresented: $isShowingAddBagModal, content: {
-			AddBagModalView(isPresented: $isShowingAddBagModal)
+			AddBagSheet(isPresented: $isShowingAddBagModal)
 		})
 		
 	}

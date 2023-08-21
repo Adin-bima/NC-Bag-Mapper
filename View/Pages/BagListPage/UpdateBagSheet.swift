@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UpdateBagView: View {
+struct UpdateBagSheet: View {
 	@Binding var bag : Bag
 	@Binding var isPresented: Bool
 	@State private var bagName: String = ""

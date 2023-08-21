@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OnboardingContainerSectionView: View {
+struct OnboardingSectionContainer: View {
 	var imageName: String
 	var title: String
 	var description: String

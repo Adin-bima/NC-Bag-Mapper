@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Marker: View {
+struct ItemMarkerView: View {
 	@Binding var item : Item
 	@Binding var imageSize : CGSize
 	@Binding var zoomScale : CGFloat

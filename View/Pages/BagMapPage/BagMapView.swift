@@ -9,9 +9,7 @@
 import SwiftUI
 
 
-
-
-struct BagView : View{
+struct BagMapView : View{
 	@EnvironmentObject var dataContainer: DataContainer
 	@Binding var bag : Bag
 	@StateObject var bagViewModel = BagViewModel()
@@ -52,7 +50,7 @@ struct BagView : View{
 											ForEach($bagViewModel.items, id : \.id){
 												$item in
 												if( bagViewModel.selectedLabel.isEmpty || bagViewModel.selectedLabel == item.labelId ){
-													Marker(item:$item, imageSize: $bagViewModel.imageSize, zoomScale : $bagViewModel.scale ,focusedItemId : $bagViewModel.focusedItemId, onFocused: { item in
+													ItemMarkerView(item:$item, imageSize: $bagViewModel.imageSize, zoomScale : $bagViewModel.scale ,focusedItemId : $bagViewModel.focusedItemId, onFocused: { item in
 														bagViewModel.focusedItemId = item.id
 													},
 														   deletedLabelId : $bagViewModel.deletedLabelId
@@ -105,8 +103,8 @@ struct BagView : View{
 							}
 						)
 				}
-				Legend(bag:$bag, selectedLabel: $bagViewModel.selectedLabel, isOpened: $bagViewModel.isLegendOpened, onLabelDeletion : bagViewModel.onLabelDeletion)
-				Action(scale: $bagViewModel.scale, lastScale: $bagViewModel.lastScale, position: $bagViewModel.position, offset: $bagViewModel.offset, lastOffset: $bagViewModel.lastOffset)
+				LegendContainer(bag:$bag, selectedLabel: $bagViewModel.selectedLabel, isOpened: $bagViewModel.isLegendOpened, onLabelDeletion : bagViewModel.onLabelDeletion)
+				ActionContainer(scale: $bagViewModel.scale, lastScale: $bagViewModel.lastScale, position: $bagViewModel.position, offset: $bagViewModel.offset, lastOffset: $bagViewModel.lastOffset)
 			}
 			.frame(maxWidth: .infinity, maxHeight : .infinity)
 			.contentShape(Rectangle())

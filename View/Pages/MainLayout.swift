@@ -16,7 +16,7 @@ struct MainLayout : View{
 	
 	var body: some View{
 		NavigationSplitView() {
-			Sidebar(selectedBagId: $selectedBagId, isShowingAddBagModal : $isShowingAddBagModal)
+			BagListView(selectedBagId: $selectedBagId, isShowingAddBagModal : $isShowingAddBagModal)
 				.navigationTitle("My Bags")
 				.navigationBarItems(
 					trailing: // Add the "+" button to the trailing side of the navigation bar
@@ -26,17 +26,16 @@ struct MainLayout : View{
 						Image(systemName: "plus")
 					})
 				)
-			} detail: {
-			MapView(selectedBagId: $selectedBagId)
+		} detail: {
+			NoBagSelectedView().navigationBarBackButtonHidden()
 			
-			}.navigationBarBackButtonHidden()
-		
-			.onAppear(){
-				if(!dataContainer.setting.isOnboardingDone){
-					dataContainer.setting.isOnboardingDone.toggle()
-					dataContainer.setting.save()
+				.onAppear(){
+					if(!dataContainer.setting.isOnboardingDone){
+						dataContainer.setting.isOnboardingDone.toggle()
+						dataContainer.setting.save()
+					}
 				}
-			}
+		}
 
 	}
 }

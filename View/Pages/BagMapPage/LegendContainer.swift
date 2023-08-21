@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Legend: View {
+struct LegendContainer: View {
 	@Binding var bag : Bag
 	
 	@Binding var selectedLabel : String

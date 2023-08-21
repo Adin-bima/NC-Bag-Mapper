@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BagItem: View {
+struct BagItemView: View {
 	@Binding var bag : Bag
 	@Binding var selectedBagId : String
 	

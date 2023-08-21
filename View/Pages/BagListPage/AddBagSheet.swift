@@ -8,14 +8,13 @@
 import SwiftUI
 import UIKit
 
-struct AddBagModalView: View {
+struct AddBagSheet: View {
 	@Binding var isPresented: Bool
 	@State private var bagName: String = ""
 	@State private var notes: String = ""
 	@State private var image: UIImage? = nil
 	@State private var showImagePicker: Bool = false
 	@State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
-	
 	@State var isShowingActionSheet : Bool = false
 	
 	@EnvironmentObject var dataContainer : DataContainer
@@ -110,7 +109,7 @@ struct AddBagModalView: View {
 				trailing:
 					Button("Save"){
 						let newBag = Bag(id: UUID().uuidString, bagName: bagName, notes: notes)
-						let saveImageResult = BagHelper.saveImageToLocalStorage(image: image!, id: newBag.id)
+						let saveImageResult = saveImageToLocalStorage(image: image!, id: newBag.id)
 
 						if saveImageResult {
 							newBag.save()
