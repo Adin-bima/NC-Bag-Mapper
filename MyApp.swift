@@ -7,7 +7,7 @@ struct MyApp: App {
 	var body: some Scene {
 		WindowGroup {
 			if(dataContainer.setting.isOnboardingDone){
-				MainLayoutView()
+				MainLayout()
 					.environmentObject(dataContainer)
 					.onAppear(){
 						dataContainer.bags = Bag.loadAll()

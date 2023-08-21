@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemMarker: View {
+struct Marker: View {
 	@Binding var item : Item
 	@Binding var imageSize : CGSize
 	@Binding var zoomScale : CGFloat
@@ -22,7 +22,9 @@ struct ItemMarker: View {
 	@State private var labelId = ""
 	@State private var label : Label?
 	
+	
 	@State private var dragOffset = CGSize.zero
+	
 	@State private var isDeleted = false
 	
 	private var onFocused : (_ item : Item)-> Void

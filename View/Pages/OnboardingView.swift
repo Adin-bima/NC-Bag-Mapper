@@ -54,7 +54,7 @@ struct OnboardingView: View {
 						OnboardingContainerSectionView(imageName: "location", title: "Find Your Items in a Snap", description: "Quickly locate your items with BagMapper's step-by-step locator. No more rummaging through your bag - find your items with ease!")
 						
 						NavigationLink {
-							MainLayoutView()
+							MainLayout()
 						} label: {
 							Text("Get Started")
 								.font(.headline)
@@ -76,7 +76,7 @@ struct OnboardingView: View {
 				
 			}, label: {
 				NavigationLink{
-					MainLayoutView()
+					MainLayout()
 				}label :{
 					
 					HStack(spacing: 4) {
