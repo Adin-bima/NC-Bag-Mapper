@@ -9,16 +9,14 @@ import SwiftUI
 
 struct UpdateBagSheet: View {
 	@Binding var bag : Bag
-	@State private var bagName: String = ""
-	@State private var notes: String = ""
-	@State var isShowingActionSheet : Bool = false
 	
+	@StateObject var updateBagViewModel = UpdateBagViewModel()
 	@Environment(\.presentationMode) var presentationModel
 	
 	init(bag: Binding<Bag>) {
 		_bag = bag
-		_bagName = State(initialValue: bag.bagName.wrappedValue)
-		_notes = State(initialValue: bag.notes.wrappedValue)
+		updateBagViewModel.bagName = bag.bagName.wrappedValue
+		updateBagViewModel.notes = bag.notes.wrappedValue
 	}
 	
 	var body: some View {
@@ -27,13 +25,13 @@ struct UpdateBagSheet: View {
 				VStack(alignment: .leading, spacing : 8) {
 					
 					Text("Bag Name")
-					TextField("Bag Name", text: $bagName)
+					TextField("Bag Name", text: $updateBagViewModel.bagName)
 						.primaryStyled()
 				}
 				
 				VStack(alignment: .leading, spacing : 8) {
 					Text("Notes (optional)")
-					TextEditor(text: $notes)
+					TextEditor(text: $updateBagViewModel.notes)
 						.primaryStyled()
 						.frame(height: 100)
 				}
@@ -44,25 +42,20 @@ struct UpdateBagSheet: View {
 			.navigationBarItems(
 				leading:
 					Button("Cancel") {
-						bagName = bag.bagName
-						notes = bag.notes
+						updateBagViewModel.cancelUpdate(bag: bag)
 						presentationModel.wrappedValue.dismiss()
 					}
 					.foregroundColor(.teal),
 				
 				trailing:
 					Button("Save"){
-						bag.bagName = bagName
-						bag.notes = notes
-						bag.save()
-						
+						updateBagViewModel.saveBag(bag: bag)
 						presentationModel.wrappedValue.dismiss()
-						
 					}
 					.disabled(
-						bagName.isEmpty
+						updateBagViewModel.bagName.isEmpty
 					)
-					.foregroundColor(bagName.isEmpty ? .gray : .teal)
+					.foregroundColor(updateBagViewModel.bagName.isEmpty ? .gray : .teal)
 				
 			)
 		}

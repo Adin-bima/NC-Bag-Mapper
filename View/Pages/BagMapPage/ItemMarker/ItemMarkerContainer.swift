@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ItemMarkerContainer: View {
-	@ObservedObject var bagViewModel : BagViewModel
+	@ObservedObject var bagViewModel : BagMapViewModel
 	@Binding var bag : Bag
 	
 	var body: some View {

@@ -11,8 +11,9 @@ import SwiftUI
 
 struct BagMapView : View{
 	@EnvironmentObject var dataContainer: DataContainer
+	@StateObject var bagViewModel = BagMapViewModel()
+	
 	@Binding var bag : Bag
-	@StateObject var bagViewModel = BagViewModel()
 	
 	init(bag: Binding<Bag>) {
 		_bag = bag
@@ -23,8 +24,20 @@ struct BagMapView : View{
 			mainGeometry in
 			ZStack(){
 				ItemMarkerContainer(bagViewModel: bagViewModel, bag: $bag)
-				LegendContainer(bag:$bag, selectedLabel: $bagViewModel.selectedLabel, isOpened: $bagViewModel.isLegendOpened, onLabelDeletion : bagViewModel.onLabelDeletion)
-				ActionContainer(scale: $bagViewModel.scale, lastScale: $bagViewModel.lastScale, position: $bagViewModel.position, offset: $bagViewModel.offset, lastOffset: $bagViewModel.lastOffset)
+				LegendContainer(
+					bag:$bag,
+					selectedLabel: $bagViewModel.selectedLabel,
+					isOpened: $bagViewModel.isLegendOpened,
+					onLabelDeletion : bagViewModel.onLabelDeletion
+				)
+				
+				ActionContainer(
+					scale: $bagViewModel.scale,
+					lastScale: $bagViewModel.lastScale,
+					position: $bagViewModel.position,
+					offset: $bagViewModel.offset,
+					lastOffset: $bagViewModel.lastOffset
+				)
 			}
 			.frame(maxWidth: .infinity, maxHeight : .infinity)
 			.contentShape(Rectangle())
@@ -41,11 +54,11 @@ struct BagMapView : View{
 			
 			bagViewModel.image = bag.getImage()
 			bagViewModel.items = bag.items()
-//			print(self.items.count)
+			//			print(self.items.count)
 		}
 		.onChange(of: bag) { newValue in
 			
-
+			
 			bagViewModel.image = newValue.getImage()
 			bagViewModel.items = newValue.items()
 			

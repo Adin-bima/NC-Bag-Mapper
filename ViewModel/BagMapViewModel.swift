@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class BagViewModel : ObservableObject{
+class BagMapViewModel : ObservableObject{
 	@Published var scale: CGFloat = 1.0
 	@Published var lastScale: CGFloat = 1.0
 	@Published var position : CGPoint = .zero

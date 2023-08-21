@@ -10,7 +10,6 @@ import SwiftUI
 
 struct MainLayout : View{
 	@EnvironmentObject var dataContainer : DataContainer
-	
 	@State var selectedBagId : String = ""
 	@State var isShowingAddBagModal = false
 	
@@ -38,7 +37,5 @@ struct MainLayout : View{
 				}
 		}
 		.navigationBarBackButtonHidden()
-
-
 	}
 }

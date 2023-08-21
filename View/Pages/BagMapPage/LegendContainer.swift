@@ -9,19 +9,16 @@ import SwiftUI
 
 struct LegendContainer: View {
 	@EnvironmentObject var dataContainer : DataContainer
+	@Environment(\.presentationMode) var presentationMode
 	
 	@Binding var bag : Bag
 	@Binding var selectedLabel : String
 	@Binding var isOpened : Bool
 	
-	@State var isAddingNew = false
-	@State var newLabelName = ""
-	@State var newLabelColor = Color.white
-	
+	@StateObject var legendViewModel = LegendContainerViewModel()
 	@GestureState var dragOffset = CGSize.zero
 	
 	var onLabelDeletion : (_ : String, _ : Bag)->Void
-	
 	var body: some View {
 		HStack(alignment : .center, spacing: 0){
 			Spacer()
@@ -34,13 +31,13 @@ struct LegendContainer: View {
 				Image(systemName: isOpened ? "chevron.right" : "chevron.left")
 					.frame(width: 32, height: 40)
 					.foregroundColor(Color.black)
+					.frame(height: 80)
+					.background(Color.white.opacity(0.8))
+					.cornerRadius(8)
+					.padding(.top, 8)
+					.padding(.trailing, 8)
 			}
-			.frame(height: 80)
-			.background(Color.white)
-			.cornerRadius(8)
-			.padding(.top, 8)
-			.padding(.trailing, 8)
-			.opacity(0.8)
+			
 			.offset( CGSize(width: dragOffset.width, height: 0) )
 			
 			if(isOpened ){
@@ -55,37 +52,29 @@ struct LegendContainer: View {
 							Image(systemName: "plus")
 								.foregroundColor(Color.blue)
 								.onTapGesture {
-									isAddingNew.toggle()
+									legendViewModel.isAddingNew.toggle()
 								}
 								.buttonStyle(BorderedProminentButtonStyle())
-								.popover(isPresented: $isAddingNew) {
+								.popover(isPresented: $legendViewModel.isAddingNew) {
 									VStack{
 										HStack(spacing : 4){
 											
-											ColorPicker("", selection: $newLabelColor, supportsOpacity: false)
+											ColorPicker("", selection: $legendViewModel.newLabelColor, supportsOpacity: false)
 												.padding()
 											
-											TextField("Label", text: $newLabelName)
+											TextField("Label", text: $legendViewModel.newLabelName)
 												.frame(width: 120)
 												.textFieldStyle(.roundedBorder)
 											
 											Button {
-												let newLabel = ItemLabel(id: UUID().uuidString, labelName: newLabelName, labelColor: newLabelColor)
-												newLabel.save()
-												dataContainer.labels.append(newLabel)
+												legendViewModel.saveNewLabel(labels: $dataContainer.labels)
 												
-												newLabelName = ""
-												newLabelColor = Color.white
-												
-												isAddingNew = false
 											} label: {
 												Image(
 													systemName: "checkmark"
 												)
 												.frame(width: 8)
 											}.buttonStyle(.borderedProminent)
-											
-											
 										}
 										
 									}.padding(8)
