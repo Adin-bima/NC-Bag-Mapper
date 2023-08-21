@@ -10,10 +10,15 @@ import UIKit
 
 struct AddBagSheet: View {
 	
-	@StateObject var addBagViewModel = AddBagSheetViewModel()
-	@EnvironmentObject var dataContainer : DataContainer
-	@Environment(\.presentationMode) var presentationMode
+	@State private var bagName: String = ""
+	@State private var notes: String = ""
+	@State private var image: UIImage? = nil
+	@State private var showImagePicker: Bool = false
+	@State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+	@State var isShowingActionSheet : Bool = false
 	
+	@EnvironmentObject var dataContainer : DataContainer
+	@Environment(\.presentationMode) var presentationModel
 	
 	var body: some View {
 		NavigationView {
@@ -21,20 +26,20 @@ struct AddBagSheet: View {
 				VStack(alignment: .leading, spacing : 8) {
 					
 					Text("Bag Name")
-					TextField("Bag Name", text: $addBagViewModel.bagName)
+					TextField("Bag Name", text: $bagName)
 						.primaryStyled()
 					
 				}
 				
 				VStack(alignment: .leading, spacing : 8) {
 					Text("Notes (optional)")
-					TextField("Notes", text: $addBagViewModel.notes)
+					TextField("Notes", text: $notes)
 						.primaryStyled()
 				}
 				
 				VStack{
 					Spacer()
-					if let image = addBagViewModel.image {
+					if let image = image {
 						
 						Image(uiImage: image)
 							.resizable()
@@ -63,7 +68,7 @@ struct AddBagSheet: View {
 						.stroke(AppColor.LIGHT_GRAY, lineWidth: 1) // Add a border with black color and width of 2
 				)
 				.onTapGesture {
-					addBagViewModel.isShowingActionSheet = true
+					isShowingActionSheet = true
 				}
 				
 			}
@@ -72,43 +77,49 @@ struct AddBagSheet: View {
 			.navigationBarItems(
 				leading:
 					Button("Cancel") {
-						presentationMode.wrappedValue.dismiss()
+						presentationModel.wrappedValue.dismiss()
 					}
 					.foregroundColor(.teal),
 				
 				trailing:
 					Button("Save"){
-						addBagViewModel.saveBag(dataContainer: dataContainer)
-						presentationMode.wrappedValue.dismiss()
+						let newBag = Bag(id: UUID().uuidString, bagName: bagName, notes: notes)
+						let saveImageResult = saveImageToLocalStorage(image: image!, id: newBag.id)
+
+						if saveImageResult {
+							newBag.save()
+						}
+						dataContainer.bags = Bag.loadAll()
+						presentationModel.wrappedValue.dismiss()
 					}
 					.disabled(
-						addBagViewModel.bagName.isEmpty || addBagViewModel.image == nil
+						bagName.isEmpty || image == nil
 					)
-					.foregroundColor(addBagViewModel.bagName.isEmpty || addBagViewModel.image == nil ? .gray : .teal)
+					.foregroundColor(bagName.isEmpty || image == nil ? .gray : .teal)
 				
 			)
 		}
-		.sheet(isPresented: $addBagViewModel.showImagePicker, onDismiss: addBagViewModel.loadImage) {
-			ImagePickerController(image: $addBagViewModel.image, sourceType: addBagViewModel.sourceType)
+		.sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+			ImagePickerController(image: $image, sourceType: sourceType)
 		}
-		.actionSheet(isPresented: $addBagViewModel.isShowingActionSheet) {
+		.actionSheet(isPresented: $isShowingActionSheet) {
 			ActionSheet(
 				title: Text("Import Image"),
 				message: Text("Select image source"),
 				buttons: [
 					.default(Text("Camera"), action: {
-						addBagViewModel.sourceType = .camera
-						addBagViewModel.showImagePicker = true
+						sourceType = .camera
+						showImagePicker = true
 						
 						// Action for Button 1
 					}),
 					.default(Text("Library"), action: {
-						addBagViewModel.sourceType = .photoLibrary
-						addBagViewModel.showImagePicker = true
+						sourceType = .photoLibrary
+						showImagePicker = true
 						// Action for Button 2
 					}),
 					.cancel(Text("Cancel"), action: {
-						addBagViewModel.isShowingActionSheet = false
+						isShowingActionSheet = false
 					}
 							  
 							 ) // Cancel button with red color
@@ -117,5 +128,8 @@ struct AddBagSheet: View {
 		}
 	}
 	
+	private func loadImage() {
+		guard image != nil else { return }
+	}
 }
 
