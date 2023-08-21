@@ -34,7 +34,7 @@ struct BagListView: View {
 				List {
 					ForEach ($dataContainer.bags.filter { $0.isFavorite.wrappedValue  }, id:\.id){
 						$bag in
-						NavigationLink(destination: BagView(bag : $bag) ){
+						NavigationLink(destination: BagMapView(bag : $bag) ){
 							BagItemView(bag: $bag, selectedBagId: $selectedBagId)
 						}
 					}
@@ -57,7 +57,7 @@ struct BagListView: View {
 				List {
 					ForEach ($dataContainer.bags.filter { !$0.isFavorite.wrappedValue  }, id:\.id){
 						$bag in
-						NavigationLink(destination: BagView(bag : $bag) ){
+						NavigationLink(destination: BagMapView(bag : $bag) ){
 							BagItemView(bag: $bag, selectedBagId: $selectedBagId)
 						}
 					}

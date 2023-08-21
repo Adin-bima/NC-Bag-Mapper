@@ -11,7 +11,14 @@ import SwiftUI
 struct NoBagSelectedView: View {
 	
 	var body: some View {
-		Text("No bag selected")
+		VStack{
+			Image("iconAsk")
+				.resizable()
+				.aspectRatio(contentMode: .fit)
+				.padding(.horizontal, 32)
+				.padding(.vertical, 64)
+			Text("No bag selected")
+		}
 		
 	}
 }
