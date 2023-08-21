@@ -26,7 +26,7 @@ class DataContainer: ObservableObject{
 			self.setting = setting
 		}
 		
-//		self.setting.isOnboardingDone = false
+		self.setting.isOnboardingDone = false
 		
 		if (!setting.islabelInitialized){
 			Label(id: UUID().uuidString, labelName: "Cards", labelColor: Color.red).save()

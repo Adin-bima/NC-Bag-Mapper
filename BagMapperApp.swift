@@ -4,6 +4,9 @@ import SwiftUI
 @main
 struct BagMapperApp: App {
 	@StateObject var dataContainer : DataContainer = DataContainer()
+	
+	
+	
 	var body: some Scene {
 		WindowGroup {
 			if(dataContainer.setting.isOnboardingDone){
@@ -11,6 +14,7 @@ struct BagMapperApp: App {
 					.environmentObject(dataContainer)
 					.onAppear(){
 						dataContainer.bags = Bag.loadAll()
+					
 					}
 			}else{
 				OnboardingView()

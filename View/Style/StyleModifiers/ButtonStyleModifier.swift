@@ -8,10 +8,20 @@
 import Foundation
 import SwiftUI
 
-
 struct ButtonStyleModifier : ViewModifier{
+	var font : Font
+	var horizontalPad : CGFloat
+	var verticalPad : CGFloat
+	var foregroundColor : Color
+	var backgroundColor : Color
+	var cornerRadius : CGFloat
+	
 	func body(content: Content) -> some View {
-		content
-		
-				}
+		content.font(font)
+			.padding(.vertical, verticalPad)
+			.padding(.horizontal, horizontalPad)
+			.foregroundColor(foregroundColor)
+			.background(backgroundColor)
+			.cornerRadius(8)
+		}
 }

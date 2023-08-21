@@ -36,3 +36,4 @@ func deleteAllImagesFromLocalStorage() -> Bool {
 		return false
 	}
 }
+

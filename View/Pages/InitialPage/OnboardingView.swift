@@ -18,15 +18,11 @@ struct OnboardingView: View {
 							}
 						}, label: {
 							Text("Next")
-								.font(.headline)
-								.padding(.vertical, 16)
-								.padding(.horizontal, 32)
+								.primaryButtonLineStyled()
+								
 						})
-						.foregroundColor(.teal)
-						.cornerRadius(8)
-						.clipShape(RoundedRectangle(cornerRadius: 8))
-						.overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.teal, lineWidth: 1))
 						.padding(.bottom, 48)
+						
 					}.tag(0)
 					
 					VStack{
@@ -38,16 +34,12 @@ struct OnboardingView: View {
 							}
 						}, label: {
 							Text("Next")
-								.font(.headline)
-								.foregroundColor(.teal)
-								.padding(.vertical, 16)
-								.padding(.horizontal, 32)
+								.primaryButtonLineStyled()
+								
 						})
-						.foregroundColor(.teal)
-						.cornerRadius(8)
-						.clipShape(RoundedRectangle(cornerRadius: 8))
-						.overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.teal, lineWidth: 1))
+						
 						.padding(.bottom, 48)
+						
 					}.tag(1)
 					
 					VStack{
@@ -57,14 +49,10 @@ struct OnboardingView: View {
 							MainLayout()
 						} label: {
 							Text("Get Started")
-								.font(.headline)
-								.foregroundColor(.white)
-								.padding(.vertical, 16)
-								.padding(.horizontal, 32)
-								.background(Color.teal)
-								.cornerRadius(8)
+								.primaryButtonStyled()
 						}
 						.padding(.bottom, 48)
+						
 					}.tag(2)
 				}
 				.tabViewStyle(PageTabViewStyle())
