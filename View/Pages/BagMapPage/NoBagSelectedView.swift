@@ -12,7 +12,7 @@ struct NoBagSelectedView: View {
 	
 	var body: some View {
 		VStack{
-			Image("iconAsk")
+			Image(AppImage.ICON_ASK)
 				.resizable()
 				.aspectRatio(contentMode: .fit)
 				.frame(width: 128)

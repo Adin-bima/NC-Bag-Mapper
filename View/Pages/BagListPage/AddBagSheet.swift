@@ -61,11 +61,11 @@ struct AddBagSheet: View {
 					
 				}
 				.frame(maxWidth: .infinity)
-				.background(Color("lightGray"))
+				.background(AppColor.LIGHT_GRAY)
 				.clipShape(RoundedRectangle(cornerRadius: 8))
 				.overlay(
 					RoundedRectangle(cornerRadius: 8)
-						.stroke(Color("lightGray"), lineWidth: 1) // Add a border with black color and width of 2
+						.stroke(AppColor.LIGHT_GRAY, lineWidth: 1) // Add a border with black color and width of 2
 				)
 				.onTapGesture {
 					isShowingActionSheet = true

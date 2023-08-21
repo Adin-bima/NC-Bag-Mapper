@@ -10,7 +10,7 @@ struct OnboardingView: View {
 				TabView (selection : $selectedTab) {
 					VStack{
 						
-						OnboardingSectionContainer(imageName: "iconMain", title: "Welcome to BagMapper!", description: "Effortlessly organize your bag with BagMapper! Tap on the bag image to add markers for your items.")
+						OnboardingSectionContainer(imageName: AppImage.ICON_MAIN, title: "Welcome to BagMapper!", description: "Effortlessly organize your bag with BagMapper! Tap on the bag image to add markers for your items.")
 						
 						Button(action: {
 							withAnimation {
@@ -27,7 +27,7 @@ struct OnboardingView: View {
 					
 					VStack{
 						
-						OnboardingSectionContainer(imageName: "tapBag", title: "Map Your Items with Precision", description: "Snap a photo of your bag, then tap any location to add marker where you put your item. Say goodbye to searching and hello to precise organization!")
+						OnboardingSectionContainer(imageName: AppImage.TAP_BAG, title: "Map Your Items with Precision", description: "Snap a photo of your bag, then tap any location to add marker where you put your item. Say goodbye to searching and hello to precise organization!")
 						Button(action: {
 							withAnimation {
 								selectedTab += 1
@@ -43,7 +43,7 @@ struct OnboardingView: View {
 					}.tag(1)
 					
 					VStack{
-						OnboardingSectionContainer(imageName: "location", title: "Find Your Items in a Snap", description: "Quickly locate your items with BagMapper's step-by-step locator. No more rummaging through your bag - find your items with ease!")
+						OnboardingSectionContainer(imageName: AppImage.LOCATION, title: "Find Your Items in a Snap", description: "Quickly locate your items with BagMapper's step-by-step locator. No more rummaging through your bag - find your items with ease!")
 						
 						NavigationLink {
 							MainLayout()
