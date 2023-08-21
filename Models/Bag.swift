@@ -70,7 +70,7 @@ class Bag : ObservableObject, Codable, Identifiable, Equatable{
 		for item in items(){
 			item.delete()
 		}
-		let _ = BagHelper.deleteImageFromLocalStorage(imageId: id)
+		let _ = deleteImageFromLocalStorage(imageId: id)
 		UserDefaults.standard.removeObject(forKey: "bag_\(id)")
 	}
 	
