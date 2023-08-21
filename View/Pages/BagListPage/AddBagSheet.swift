@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 
 struct AddBagSheet: View {
-	@Binding var isPresented: Bool
+	
 	@State private var bagName: String = ""
 	@State private var notes: String = ""
 	@State private var image: UIImage? = nil
@@ -18,6 +18,7 @@ struct AddBagSheet: View {
 	@State var isShowingActionSheet : Bool = false
 	
 	@EnvironmentObject var dataContainer : DataContainer
+	@Environment(\.presentationMode) var presentationModel
 	
 	var body: some View {
 		NavigationView {
@@ -76,7 +77,7 @@ struct AddBagSheet: View {
 			.navigationBarItems(
 				leading:
 					Button("Cancel") {
-						isPresented = false
+						presentationModel.wrappedValue.dismiss()
 					}
 					.foregroundColor(.teal),
 				
@@ -89,7 +90,7 @@ struct AddBagSheet: View {
 							newBag.save()
 						}
 						dataContainer.bags = Bag.loadAll()
-						isPresented = false
+						presentationModel.wrappedValue.dismiss()
 					}
 					.disabled(
 						bagName.isEmpty || image == nil

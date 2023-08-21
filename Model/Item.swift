@@ -52,8 +52,8 @@ class Item : ObservableObject, Codable, Equatable{
 		return nil
 	}
 	
-	func label()->Label?{
-		if let label = Label.load(id: labelId){
+	func label()->ItemLabel?{
+		if let label = ItemLabel.load(id: labelId){
 			return label
 		}
 		return nil

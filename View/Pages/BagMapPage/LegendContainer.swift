@@ -70,7 +70,7 @@ struct LegendContainer: View {
 												.textFieldStyle(.roundedBorder)
 											
 											Button {
-												let newLabel = Label(id: UUID().uuidString, labelName: newLabelName, labelColor: newLabelColor)
+												let newLabel = ItemLabel(id: UUID().uuidString, labelName: newLabelName, labelColor: newLabelColor)
 												newLabel.save()
 												dataContainer.labels.append(newLabel)
 												

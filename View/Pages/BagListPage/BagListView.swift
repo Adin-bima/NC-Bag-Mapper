@@ -71,7 +71,7 @@ struct BagListView: View {
 		}
 			
 		.sheet(isPresented: $isShowingAddBagModal, content: {
-			AddBagSheet(isPresented: $isShowingAddBagModal)
+			AddBagSheet()
 		})
 		
 	}

@@ -16,6 +16,7 @@ struct BagMapperApp: App {
 						dataContainer.bags = Bag.loadAll()
 					
 					}
+					
 			}else{
 				OnboardingView()
 					.environmentObject(dataContainer)

@@ -10,21 +10,50 @@ import SwiftUI
 struct UpdateMarkerSheet: View {
 	@EnvironmentObject var dataContainer : DataContainer
 	@Environment(\.presentationMode) var presentationModel
+	@Environment(\.horizontalSizeClass) var horizontalSizeClass
 	
 	@Binding var itemName : String
 	@Binding var notes : String
 	@Binding var labelId : String
 	@Binding var item : Item
 	@Binding var isDeleted : Bool
-	@Binding var label : Label?
+	@Binding var label : ItemLabel?
+	
+	var maxWidth : CGFloat
+	
+	func saveItem(){
+		item.delete()
+		
+		presentationModel.wrappedValue.dismiss()
+		
+		withAnimation {
+			isDeleted.toggle()
+		}
+	}
 	
 	
-    var body: some View {
-		VStack {
+	func deleteItem(){
+		item.itemName = itemName
+		item.notes = notes
+		item.labelId = labelId
+		label = ItemLabel.load(id: labelId)
+		item.save()
+		
+		presentationModel.wrappedValue.dismiss()
+	}
+	
+	
+	var body: some View {
+		VStack (alignment : .leading) {
+			Text("Item name")
 			TextField("Item name", text: $itemName)
 				.textFieldStyle(.roundedBorder)
+				.padding(.bottom, 8)
+			
+			Text("Note (Optional)")
 			TextField("Notes", text: $notes)
 				.textFieldStyle(.roundedBorder)
+				.padding(.bottom, 8)
 			
 			ScrollView(.horizontal, showsIndicators : false){
 				HStack{
@@ -58,43 +87,30 @@ struct UpdateMarkerSheet: View {
 						}
 						.padding(1)
 					}
-					Spacer()
+					
 				}
-				.frame(maxWidth: .infinity)
+				
 				
 			}
-			.frame(width: 200)
-			
-			//						.frame(width: 120, height:32)
+//
 			
 			
 			HStack{
-				Button(action: {
-					item.delete()
-					
-					presentationModel.wrappedValue.dismiss()
-					
-					withAnimation {
-						isDeleted.toggle()
-					}
-				}) {
+				Button(action: saveItem) {
 					Image(systemName: "trash")
+						.padding(8)
 				}.buttonStyle(BorderedButtonStyle())
+				
 				Spacer()
-				Button(action: {
-					item.itemName = itemName
-					item.notes = notes
-					item.labelId = labelId
-					label = Label.load(id: labelId)
-					item.save()
-					
-					presentationModel.wrappedValue.dismiss()
-				}) {
+				
+				Button(action: deleteItem) {
 					Image(systemName: "checkmark")
+						.padding(8)
 				}.buttonStyle(BorderedProminentButtonStyle())
 			}
 		}
-		.padding(16)
-    }
+		.frame(maxWidth: maxWidth)
+		.padding(24)
+	}
 }
 

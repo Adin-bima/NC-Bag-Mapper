@@ -26,6 +26,7 @@ struct MainLayout : View{
 						Image(systemName: "plus")
 					})
 				)
+				
 		} detail: {
 			NoBagSelectedView().navigationBarBackButtonHidden()
 			
@@ -36,6 +37,8 @@ struct MainLayout : View{
 					}
 				}
 		}
+		.navigationBarBackButtonHidden()
+
 
 	}
 }

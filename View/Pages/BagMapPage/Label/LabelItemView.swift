@@ -11,7 +11,7 @@ struct LabelItemView: View {
 	@EnvironmentObject var dataContainer : DataContainer
 	
 	@Binding var bag : Bag
-	@Binding var label : Label
+	@Binding var label : ItemLabel
 	@Binding var selectedLabel : String
 	
 	var onLabelDeletion : (_ : String, _ : Bag)->Void

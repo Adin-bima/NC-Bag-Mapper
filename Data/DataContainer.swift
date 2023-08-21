@@ -10,7 +10,7 @@ import SwiftUI
 
 class DataContainer: ObservableObject{
 	@Published var bags : [Bag] = []
-	@Published var labels : [Label] = []
+	@Published var labels : [ItemLabel] = []
 	@Published var setting : Setting
 	@Published var columnVisibility = NavigationSplitViewVisibility.doubleColumn
 	
@@ -29,15 +29,15 @@ class DataContainer: ObservableObject{
 		self.setting.isOnboardingDone = false
 		
 		if (!setting.islabelInitialized){
-			Label(id: UUID().uuidString, labelName: "Cards", labelColor: Color.red).save()
-			Label(id: UUID().uuidString, labelName: "Keys", labelColor: Color.orange).save()
-			Label(id: UUID().uuidString, labelName: "Stationery", labelColor: Color.yellow).save()
-			Label(id: UUID().uuidString, labelName: "Electronics", labelColor: Color.green).save()
-			Label(id: UUID().uuidString, labelName: "Makeup", labelColor: Color.blue).save()
+			ItemLabel(id: UUID().uuidString, labelName: "Cards", labelColor: Color.red).save()
+			ItemLabel(id: UUID().uuidString, labelName: "Keys", labelColor: Color.orange).save()
+			ItemLabel(id: UUID().uuidString, labelName: "Stationery", labelColor: Color.yellow).save()
+			ItemLabel(id: UUID().uuidString, labelName: "Electronics", labelColor: Color.green).save()
+			ItemLabel(id: UUID().uuidString, labelName: "Makeup", labelColor: Color.blue).save()
 			setting.islabelInitialized = true
 			setting.save()
 		}
 		
-		labels = Label.loadAll()
+		labels = ItemLabel.loadAll()
 	}
 }

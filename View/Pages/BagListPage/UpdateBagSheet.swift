@@ -9,15 +9,14 @@ import SwiftUI
 
 struct UpdateBagSheet: View {
 	@Binding var bag : Bag
-	@Binding var isPresented: Bool
 	@State private var bagName: String = ""
 	@State private var notes: String = ""
-	
 	@State var isShowingActionSheet : Bool = false
 	
-	init(bag: Binding<Bag>, isPresented: Binding<Bool>) {
+	@Environment(\.presentationMode) var presentationModel
+	
+	init(bag: Binding<Bag>) {
 		_bag = bag
-		_isPresented = isPresented
 		_bagName = State(initialValue: bag.bagName.wrappedValue)
 		_notes = State(initialValue: bag.notes.wrappedValue)
 	}
@@ -47,7 +46,7 @@ struct UpdateBagSheet: View {
 					Button("Cancel") {
 						bagName = bag.bagName
 						notes = bag.notes
-						isPresented = false
+						presentationModel.wrappedValue.dismiss()
 					}
 					.foregroundColor(.teal),
 				
@@ -57,7 +56,7 @@ struct UpdateBagSheet: View {
 						bag.notes = notes
 						bag.save()
 						
-						isPresented = false
+						presentationModel.wrappedValue.dismiss()
 						
 					}
 					.disabled(

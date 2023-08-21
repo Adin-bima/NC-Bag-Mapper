@@ -81,7 +81,7 @@ struct BagItemView: View {
 				}, secondaryButton: .cancel())
 			}
 			.sheet(isPresented: $isUpdating) {
-				UpdateBagSheet(bag : $bag, isPresented: $isUpdating)
+				UpdateBagSheet(bag : $bag)
 			}
 	}
 	

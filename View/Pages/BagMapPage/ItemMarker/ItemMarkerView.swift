@@ -22,7 +22,7 @@ struct ItemMarkerView: View {
 	@State private var itemName = ""
 	@State private var notes = ""
 	@State private var labelId = ""
-	@State private var label : Label?
+	@State private var label : ItemLabel?
 	@State private var dragOffset = CGSize.zero
 	@State private var isDeleted = false
 	
@@ -72,7 +72,13 @@ struct ItemMarkerView: View {
 			
 			// MARK: POPOVER
 				.popover(isPresented: $isPopoverVisible, arrowEdge: .top) {
-					UpdateMarkerSheet(itemName: $itemName, notes: $notes, labelId: $labelId, item: $item, isDeleted: $isDeleted, label: $label)
+					UpdateMarkerSheet(itemName: $itemName, notes: $notes, labelId: $labelId, item: $item, isDeleted: $isDeleted, label: $label, maxWidth : 320)
+				}
+				
+			
+				.sheet(isPresented: $isSheetVisible) {
+					UpdateMarkerSheet(itemName: $itemName, notes: $notes, labelId: $labelId, item: $item, isDeleted: $isDeleted, label: $label, maxWidth : .infinity)
+						.presentationDetents([.height(320)])
 				}
 			
 				.frame(width: 28, height: 28)

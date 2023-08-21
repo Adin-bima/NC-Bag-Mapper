@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-class Label : ObservableObject, Codable{
+class ItemLabel : ObservableObject, Codable{
 	@Published var id : String
 	@Published var labelName : String
 	@Published var labelColor : Color
@@ -44,9 +44,9 @@ class Label : ObservableObject, Codable{
 	}
 	
 	// Function to load a Label instance from UserDefaults
-	static func load(id: String) -> Label? {
+	static func load(id: String) -> ItemLabel? {
 		if let labelData = UserDefaults.standard.data(forKey: "label_\(id)"),
-			let label = try? JSONDecoder().decode(Label.self, from: labelData) {
+			let label = try? JSONDecoder().decode(ItemLabel.self, from: labelData) {
 			return label
 		}
 		return nil
@@ -67,13 +67,13 @@ class Label : ObservableObject, Codable{
 	}
 	
 	// Function to load all Label instances from UserDefaults
-	static func loadAll() -> [Label] {
-		var labels: [Label] = []
+	static func loadAll() -> [ItemLabel] {
+		var labels: [ItemLabel] = []
 		let keys = UserDefaults.standard.dictionaryRepresentation().keys
 		for key in keys {
 			if key.hasPrefix("label_"),
 				let labelData = UserDefaults.standard.data(forKey: key),
-				let label = try? JSONDecoder().decode(Label.self, from: labelData) {
+				let label = try? JSONDecoder().decode(ItemLabel.self, from: labelData) {
 				labels.append(label)
 			}
 		}
