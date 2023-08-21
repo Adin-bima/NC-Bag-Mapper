@@ -12,20 +12,11 @@ struct MainLayout : View{
 	@EnvironmentObject var dataContainer : DataContainer
 	
 	@State var selectedBagId : String = ""
-	@State var isShowingAddBagModal = false
 	
 	var body: some View{
 		NavigationSplitView() {
-			BagListView(selectedBagId: $selectedBagId, isShowingAddBagModal : $isShowingAddBagModal)
+			BagListView(selectedBagId: $selectedBagId)
 				.navigationTitle("My Bags")
-				.navigationBarItems(
-					trailing: // Add the "+" button to the trailing side of the navigation bar
-					Button(action: {
-						isShowingAddBagModal = true
-					}, label: {
-						Image(systemName: "plus")
-					})
-				)
 				
 		} detail: {
 			NoBagSelectedView().navigationBarBackButtonHidden()

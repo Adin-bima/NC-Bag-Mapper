@@ -4,6 +4,7 @@ import SwiftUI
 struct OnboardingView: View {
 	
 	@State var selectedTab = 0
+	
 	var body: some View {
 		NavigationStack{
 			VStack{

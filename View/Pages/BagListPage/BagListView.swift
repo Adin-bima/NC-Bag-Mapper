@@ -10,18 +10,16 @@ import SwiftUI
 
 struct BagListView: View {
 	@EnvironmentObject var dataContainer : DataContainer
-	
+	@StateObject var bagListViewModel = BagListViewModel()
 	@Binding var selectedBagId : String
-	@Binding var isShowingAddBagModal : Bool
-
 	
 	var body: some View {
-	
+		
 		VStack(alignment : .leading, spacing: 8){
 			Text("Favorite Bags")
 				.padding(.horizontal)
 				.foregroundColor(.gray)
-				
+			
 			
 			if dataContainer.bags.filter({ bag in return bag.isFavorite }).isEmpty {
 				Text("No favorite bags")
@@ -29,7 +27,7 @@ struct BagListView: View {
 					.foregroundColor(.gray)
 					.frame(maxWidth: .infinity)
 					.background(Color(UIColor.systemGroupedBackground))
-					
+				
 			} else {
 				List {
 					ForEach ($dataContainer.bags.filter { $0.isFavorite.wrappedValue  }, id:\.id){
@@ -44,7 +42,7 @@ struct BagListView: View {
 			Text("Other Bags")
 				.padding(.horizontal)
 				.foregroundColor(.gray)
-				
+			
 			
 			if dataContainer.bags.filter({ bag in return !bag.isFavorite }).isEmpty {
 				Text("No bags available")
@@ -52,7 +50,7 @@ struct BagListView: View {
 					.foregroundColor(.gray)
 					.frame(maxWidth: .infinity)
 					.background(Color(UIColor.systemGroupedBackground))
-					
+				
 			} else {
 				List {
 					ForEach ($dataContainer.bags.filter { !$0.isFavorite.wrappedValue  }, id:\.id){
@@ -67,12 +65,21 @@ struct BagListView: View {
 			}
 			
 			Spacer()
-		
-		}
 			
-		.sheet(isPresented: $isShowingAddBagModal, content: {
+		}
+		
+		.sheet(isPresented: $bagListViewModel.isShowingAddNewBagModal, content: {
 			AddBagSheet()
 		})
+		.navigationBarItems(
+			trailing: // Add the "+" button to the trailing side of the navigation bar
+			Button(action: {
+				bagListViewModel.isShowingAddNewBagModal = true
+			}, label: {
+				Image(systemName: "plus")
+			})
+		)
+		
 		
 	}
 	
