@@ -11,6 +11,7 @@ struct OnboardingView: View {
 					VStack{
 						
 						OnboardingSectionContainer(imageName: "iconMain", title: "Welcome to BagMapper!", description: "Effortlessly organize your bag with BagMapper! Tap on the bag image to add markers for your items.")
+						
 						Button(action: {
 							withAnimation {
 								selectedTab += 1
@@ -69,7 +70,7 @@ struct OnboardingView: View {
 				.tabViewStyle(PageTabViewStyle())
 				.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
 			}
-			//			.navigationBarHidden(true) // Hide the navigation bar
+				//			.navigationBarHidden(true) // Hide the navigation bar
 			.navigationBarBackButtonHidden(true) // Hide the back button
 			.navigationBarItems(trailing: Button(action: {
 				

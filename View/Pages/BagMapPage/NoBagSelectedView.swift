@@ -15,8 +15,8 @@ struct NoBagSelectedView: View {
 			Image("iconAsk")
 				.resizable()
 				.aspectRatio(contentMode: .fit)
-				.padding(.horizontal, 32)
-				.padding(.vertical, 64)
+				.frame(width: 128)
+				.padding(24)
 			Text("No bag selected")
 		}
 		

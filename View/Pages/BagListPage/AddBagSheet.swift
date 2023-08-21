@@ -81,21 +81,6 @@ struct AddBagSheet: View {
 					isShowingActionSheet = true
 				}
 				
-				
-//				Spacer()
-//
-//				HStack{
-//					Button(action: {
-//						isShowingActionSheet = true
-//					}) {
-//						Text("Import Image")
-//							.foregroundColor(.white)
-//							.padding()
-//							.background(Color.teal)
-//							.cornerRadius(8)
-//							.padding(.horizontal)
-//					}
-//				}.frame(maxWidth: .infinity)
 			}
 			.padding()
 			.navigationBarTitle("Add Bag", displayMode: .inline)
