@@ -8,6 +8,15 @@
 import Foundation
 import SwiftUI
 
+struct ImageSizePreferenceKey: PreferenceKey {
+	static var defaultValue: CGSize = .zero
+	
+	static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+		value = nextValue()
+	}
+}
+
+
 func setImageOrientation(image: UIImage, orientation: UIImage.Orientation) -> UIImage? {
 	
 	UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
