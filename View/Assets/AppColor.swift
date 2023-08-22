@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 class AppColor{
-	static var INPUT_BG = Color("inpuBg")
-	static var LIGHT_GRAY = Color("lightGray")
-	static var MAIN_BLACK_TEXT = Color("mainBlackText")
-	static var MAIN_WHITE = Color("mainWhite")
+	static let INPUT_BG = Color("inpuBg")
+	static let LIGHT_GRAY = Color("lightGray")
+	static let MAIN_BLACK_TEXT = Color("mainBlackText")
+	static let MAIN_WHITE = Color("mainWhite")
 }

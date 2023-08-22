@@ -4,6 +4,7 @@ import SwiftUI
 struct OnboardingView: View {
 	
 	@State var selectedTab = 0
+	
 	var body: some View {
 		NavigationStack{
 			VStack{
@@ -58,7 +59,6 @@ struct OnboardingView: View {
 				.tabViewStyle(PageTabViewStyle())
 				.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
 			}
-				//			.navigationBarHidden(true) // Hide the navigation bar
 			.navigationBarBackButtonHidden(true) // Hide the back button
 			.navigationBarItems(trailing: Button(action: {
 				

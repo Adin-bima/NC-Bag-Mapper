@@ -12,7 +12,6 @@ import SwiftUI
 struct BagMapView : View{
 	@EnvironmentObject var dataContainer: DataContainer
 	@StateObject var bagViewModel = BagMapViewModel()
-	
 	@Binding var bag : Bag
 	
 	init(bag: Binding<Bag>) {
@@ -49,6 +48,7 @@ struct BagMapView : View{
 			}
 			
 		}
+		.navigationTitle(bag.bagName)
 		.ignoresSafeArea(.keyboard)
 		.onAppear(){
 			

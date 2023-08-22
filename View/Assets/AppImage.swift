@@ -8,9 +8,9 @@
 import Foundation
 
 class AppImage{
-	static var ICON_ASK = "iconAsk"
-	static var ICON_LAYOUT = "iconLayout"
-	static var ICON_MAIN = "iconMain"
-	static var LOCATION = "location"
-	static var TAP_BAG = "tapBag"
+	static let ICON_ASK = "iconAsk"
+	static let ICON_LAYOUT = "iconLayout"
+	static let ICON_MAIN = "iconMain"
+	static let LOCATION = "location"
+	static let TAP_BAG = "tapBag"
 }

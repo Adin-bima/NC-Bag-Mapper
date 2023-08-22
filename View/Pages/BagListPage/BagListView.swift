@@ -10,10 +10,7 @@ import SwiftUI
 
 struct BagListView: View {
 	@EnvironmentObject var dataContainer : DataContainer
-	
-	@Binding var selectedBagId : String
-	@Binding var isShowingAddBagModal : Bool
-
+	@ObservedObject var mainLayoutViewModel : MainLayoutViewModel
 	
 	var body: some View {
 	
@@ -35,7 +32,7 @@ struct BagListView: View {
 					ForEach ($dataContainer.bags.filter { $0.isFavorite.wrappedValue  }, id:\.id){
 						$bag in
 						NavigationLink(destination: BagMapView(bag : $bag) ){
-							BagItemView(bag: $bag, selectedBagId: $selectedBagId)
+							BagItemView(bag: $bag, selectedBagId: $mainLayoutViewModel.selectedBagId)
 						}
 					}
 				}
@@ -58,7 +55,7 @@ struct BagListView: View {
 					ForEach ($dataContainer.bags.filter { !$0.isFavorite.wrappedValue  }, id:\.id){
 						$bag in
 						NavigationLink(destination: BagMapView(bag : $bag) ){
-							BagItemView(bag: $bag, selectedBagId: $selectedBagId)
+							BagItemView(bag: $bag, selectedBagId: $mainLayoutViewModel.selectedBagId)
 						}
 					}
 					
@@ -70,7 +67,7 @@ struct BagListView: View {
 		
 		}
 			
-		.sheet(isPresented: $isShowingAddBagModal, content: {
+		.sheet(isPresented: $mainLayoutViewModel.isShowingAddBagModal, content: {
 			AddBagSheet()
 		})
 		

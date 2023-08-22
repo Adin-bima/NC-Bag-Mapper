@@ -14,7 +14,7 @@ struct MainLayout : View{
 	
 	var body: some View{
 		NavigationSplitView() {
-			BagListView(selectedBagId: $mainLayoutViewModel.selectedBagId, isShowingAddBagModal : $mainLayoutViewModel.isShowingAddBagModal)
+			BagListView(mainLayoutViewModel : mainLayoutViewModel)
 				.navigationTitle("My Bags")
 				.navigationBarItems(
 					trailing: // Add the "+" button to the trailing side of the navigation bar

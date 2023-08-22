@@ -14,7 +14,6 @@ class DataContainer: ObservableObject{
 	@Published var setting : Setting
 	@Published var columnVisibility = NavigationSplitViewVisibility.doubleColumn
 	
-	
 	init(){
 		if let settingData = UserDefaults.standard.data(forKey: "setting")
 		{
