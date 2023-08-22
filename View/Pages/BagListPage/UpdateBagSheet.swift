@@ -15,8 +15,6 @@ struct UpdateBagSheet: View {
 	
 	init(bag: Binding<Bag>) {
 		_bag = bag
-		updateBagViewModel.bagName = bag.bagName.wrappedValue
-		updateBagViewModel.notes = bag.notes.wrappedValue
 	}
 	
 	var body: some View {
@@ -58,6 +56,10 @@ struct UpdateBagSheet: View {
 					.foregroundColor(updateBagViewModel.bagName.isEmpty ? .gray : .teal)
 				
 			)
+			.onAppear(){
+				updateBagViewModel.bagName = bag.bagName
+				updateBagViewModel.notes = bag.notes
+			}
 		}
 		
 	}
