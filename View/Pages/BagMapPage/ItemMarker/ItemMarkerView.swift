@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ItemMarkerView: View {
+	@EnvironmentObject var dataContainer : DataContainer
+	@Environment(\.horizontalSizeClass) var horizontalSizeClass
+	@StateObject var itemMarkerViewModel = ItemMarkerViewModel()
+	
+	
 	@Binding var item : Item
 	@Binding var imageSize : CGSize
 	@Binding var zoomScale : CGFloat
 	@Binding var focusedItemId : String
 	@Binding var deletedLabelId : String
-	
-	@EnvironmentObject var dataContainer : DataContainer
-	@Environment(\.horizontalSizeClass) var horizontalSizeClass
-	
-	@StateObject var itemMarkerViewModel = ItemMarkerViewModel()
 	
 	private var onFocused : (_ item : Item)-> Void
 	

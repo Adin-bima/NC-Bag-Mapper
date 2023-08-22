@@ -10,17 +10,16 @@ import SwiftUI
 
 struct MainLayout : View{
 	@EnvironmentObject var dataContainer : DataContainer
-	@State var selectedBagId : String = ""
-	@State var isShowingAddBagModal = false
+	@StateObject var mainLayoutViewModel = MainLayoutViewModel()
 	
 	var body: some View{
 		NavigationSplitView() {
-			BagListView(selectedBagId: $selectedBagId, isShowingAddBagModal : $isShowingAddBagModal)
+			BagListView(selectedBagId: $mainLayoutViewModel.selectedBagId, isShowingAddBagModal : $mainLayoutViewModel.isShowingAddBagModal)
 				.navigationTitle("My Bags")
 				.navigationBarItems(
 					trailing: // Add the "+" button to the trailing side of the navigation bar
 					Button(action: {
-						isShowingAddBagModal = true
+						mainLayoutViewModel.isShowingAddBagModal = true
 					}, label: {
 						Image(systemName: "plus")
 					})
@@ -28,7 +27,6 @@ struct MainLayout : View{
 				
 		} detail: {
 			NoBagSelectedView().navigationBarBackButtonHidden()
-			
 				.onAppear(){
 					if(!dataContainer.setting.isOnboardingDone){
 						dataContainer.setting.isOnboardingDone.toggle()

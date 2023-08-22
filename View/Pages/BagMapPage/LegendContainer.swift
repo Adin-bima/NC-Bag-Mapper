@@ -10,13 +10,13 @@ import SwiftUI
 struct LegendContainer: View {
 	@EnvironmentObject var dataContainer : DataContainer
 	@Environment(\.presentationMode) var presentationMode
+	@StateObject var legendViewModel = LegendContainerViewModel()
+	
+	@GestureState var dragOffset = CGSize.zero
 	
 	@Binding var bag : Bag
 	@Binding var selectedLabel : String
 	@Binding var isOpened : Bool
-	
-	@StateObject var legendViewModel = LegendContainerViewModel()
-	@GestureState var dragOffset = CGSize.zero
 	
 	var onLabelDeletion : (_ : String, _ : Bag)->Void
 	var body: some View {

@@ -5,8 +5,6 @@ import SwiftUI
 struct BagMapperApp: App {
 	@StateObject var dataContainer : DataContainer = DataContainer()
 	
-	
-	
 	var body: some Scene {
 		WindowGroup {
 			if(dataContainer.setting.isOnboardingDone){
