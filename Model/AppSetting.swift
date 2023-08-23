@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Setting : Codable, ObservableObject{
+class AppSetting : Codable, ObservableObject{
 	@Published var isOnboardingDone : Bool
 	@Published var islabelInitialized : Bool
 	@Published var isItemNameVisible  : Bool
