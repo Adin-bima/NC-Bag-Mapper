@@ -4,7 +4,6 @@
 //  Created by Alidin on 16/04/23.
 //
 
-import Foundation
 import SwiftUI
 
 func deleteAllItemsFromUserDefaults() {

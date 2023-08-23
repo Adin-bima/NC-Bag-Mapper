@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class AppSettingService {
 	static let shared = AppSettingService()
 	
