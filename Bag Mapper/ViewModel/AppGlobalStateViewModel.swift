@@ -14,7 +14,7 @@ class AppGlobalStateViewModel : ObservableObject{
 //		self.setting.isOnboardingDone = false
 		
 		if (!setting.islabelInitialized){
-			var newLabels = [ItemLabel(id: UUID().uuidString, labelName: "Cards", labelColor: Color.red.toHex()),
+			let newLabels = [ItemLabel(id: UUID().uuidString, labelName: "Cards", labelColor: Color.red.toHex()),
 							 ItemLabel(id: UUID().uuidString, labelName: "Keys", labelColor: Color.orange.toHex()),
 							 ItemLabel(id: UUID().uuidString, labelName: "Stationery", labelColor: Color.yellow.toHex()),
 							 ItemLabel(id: UUID().uuidString, labelName: "Electronics", labelColor: Color.green.toHex()),

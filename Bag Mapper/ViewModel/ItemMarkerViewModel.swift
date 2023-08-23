@@ -88,8 +88,8 @@ class ItemMarkerViewModel : ObservableObject{
 	}
 	
 	func changeItemLocation(value : DragGesture.Value, imageSize : CGSize){
-		var newWidth = value.translation.width / (imageSize.width )
-		var newHeight = value.translation.height / (imageSize.height )
+		let newWidth = value.translation.width / (imageSize.width )
+		let newHeight = value.translation.height / (imageSize.height )
 		dragOffset = CGSize(width: newWidth , height: newHeight )
 	}
 }

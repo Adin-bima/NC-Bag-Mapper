@@ -30,7 +30,7 @@ struct ItemLabelService {
 	func deleteItemLabelById(_ labelId : String) -> ServiceResponse<Void> {
 		UserDefaults.standard.removeObject(forKey: "label_\(labelId)")
 		
-		let keys = UserDefaults.standard.dictionaryRepresentation().keys
+		_ = UserDefaults.standard.dictionaryRepresentation().keys
 		
 		if let items = ItemService.shared.loadAllItemsByLabel(labelId: labelId).data {
 			for item in items {

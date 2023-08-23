@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct BagMapperApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+	@StateObject var globalState = AppGlobalStateViewModel()
+	
+	var body: some Scene {
+		WindowGroup {
+			if(globalState.setting.isOnboardingDone){
+				MainLayout()
+					.environmentObject(globalState)
+				
+			}else{
+				OnboardingView()
+					.environmentObject(globalState)
+				
+			}
+		}
+	}
 }
