@@ -8,9 +8,16 @@
 import SwiftUI
 
 class AppGlobalStateViewModel : ObservableObject{
-	@Published var setting = AppSettingService.shared.loadSetting()
+	@Published var setting : AppSetting
 	
 	init(){
+		
+		// comment this if you want to reset app to default
+//		deleteAllItemsFromUserDefaults()
+//		_ = deleteAllImagesFromLocalStorage()
+
+		setting = AppSettingService.shared.loadSetting()
+		
 //		self.setting.isOnboardingDone = false
 		
 		if (!setting.islabelInitialized){

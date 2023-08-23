@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LegendContainer: View {
 	@Environment(\.presentationMode) var presentationMode
+	@EnvironmentObject var mainLayoutViewModel : MainLayoutViewModel
 	@StateObject var legendViewModel = LegendContainerViewModel()
 	
 	@GestureState var dragOffset = CGSize.zero
@@ -55,7 +56,7 @@ struct LegendContainer: View {
 								.popover(isPresented: $legendViewModel.isAddingNew) {
 								
 										VStack(spacing : 16){
-											Text("Create a new label").font(.title3).padding(.bottom, 8)
+											Text("Create a new label").font(.title3).padding(.vertical, 8)
 											
 											TextField("Label name", text: $legendViewModel.newLabelName)
 												.textFieldStyle(.roundedBorder)
@@ -64,19 +65,24 @@ struct LegendContainer: View {
 												ColorPicker("Label color : ", selection: $legendViewModel.newLabelColor, supportsOpacity: false)
 												RoundedRectangle(cornerRadius: 8)
 													.fill(legendViewModel.newLabelColor).frame(height: 32)
-													.overlay(RoundedRectangle(cornerRadius: 4).stroke(Color.gray,  lineWidth: 1))
+													.overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray,  lineWidth: 1))
 											}
-											
 											
 											Button {
 												legendViewModel.saveNewLabel()
+												mainLayoutViewModel.loadAllLabels()
 												
 											} label: {
-												Image(
-													systemName: "checkmark"
-												)
-												.frame(width: 8)
-											}.buttonStyle(.borderedProminent)
+												Spacer()
+												
+												Text("Save")
+													.padding(8)
+												
+												Spacer()
+											}
+										
+											.buttonStyle(.borderedProminent)
+											.disabled(legendViewModel.newLabelName.isEmpty )
 											
 										}.padding()
 										.presentationDetents([.height(240)])
@@ -92,7 +98,6 @@ struct LegendContainer: View {
 							LabelContainer(bag: $bag, selectedLabel: $selectedLabel)
 						}
 					}
-					
 					
 				}
 				

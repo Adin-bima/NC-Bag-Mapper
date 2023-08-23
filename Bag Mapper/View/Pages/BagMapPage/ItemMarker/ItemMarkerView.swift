@@ -57,10 +57,10 @@ struct ItemMarkerView: View {
 						itemMarkerViewModel : itemMarkerViewModel,
 						item: $item,
 						maxWidth : .infinity)
-					.presentationDetents([.height(320)])
+					.presentationDetents([.height(360)])
 				}
 			
-				.frame(width: 28, height: 28)
+				.frame(width: 28 * (zoomScale < 1 ? 1 : 1/zoomScale), height: 28 * (zoomScale < 1 ? 1 : 1/zoomScale))
 			
 				.onTapGesture {
 					
@@ -80,7 +80,9 @@ struct ItemMarkerView: View {
 				.offset(CGSize(width: 0, height: 32))
 				.onTapGesture {
 					onFocused(item)
-					itemMarkerViewModel.toggleEditMark(horizontalSizeClass: horizontalSizeClass!)				}
+					itemMarkerViewModel.toggleEditMark(horizontalSizeClass: horizontalSizeClass!)	}
+				.scaleEffect(zoomScale < 1 ? 1 : 1/zoomScale)
+			
 		}
 		.position(x: item.x * imageSize.width , y: item.y * imageSize.height)
 		.offset(CGSize(width: itemMarkerViewModel.dragOffset.width * imageSize.width, height:itemMarkerViewModel.dragOffset.height * imageSize.height  ))

@@ -19,16 +19,31 @@ struct UpdateMarkerSheet: View {
 	var maxWidth : CGFloat
 	
 	var body: some View {
-		VStack (alignment : .leading) {
-			Text("Item name")
-			TextField("Item name", text: $itemMarkerViewModel.itemName)
-				.textFieldStyle(.roundedBorder)
-				.padding(.bottom, 8)
+		VStack (alignment : .leading, spacing : 16) {
+			HStack{
+				Spacer()
+				Text("Update item").font(.title3).padding(.vertical, 8)
+				Spacer()
+			}
 			
-			Text("Note (Optional)")
-			TextField("Notes", text: $itemMarkerViewModel.notes)
-				.textFieldStyle(.roundedBorder)
-				.padding(.bottom, 8)
+			VStack{
+				HStack{
+					Text("Item name")
+					Spacer()
+				}
+				TextField("Item name", text: $itemMarkerViewModel.itemName)
+					.textFieldStyle(.roundedBorder)
+			}
+			
+			
+			VStack{
+				HStack{
+					Text("Note (Optional)")
+					Spacer()
+				}
+				TextField("Notes", text: $itemMarkerViewModel.notes)
+					.textFieldStyle(.roundedBorder)
+			}
 			
 			ScrollView(.horizontal, showsIndicators : false){
 				HStack{
@@ -74,18 +89,24 @@ struct UpdateMarkerSheet: View {
 				Button(){
 					itemMarkerViewModel.deleteItem(item: item, using: presentationMode)
 				}label: {
-					Image(systemName: "trash")
-						.padding(8)
-				}.buttonStyle(BorderedButtonStyle())
+					Text("Delete").padding(8)
+						.frame(width: 100)
+				}
+				
+				.buttonStyle(BorderedButtonStyle())
 				
 				Spacer()
 				
 				Button(){
 					itemMarkerViewModel.saveItem(item: $item, using: presentationMode)
 				} label :{
-					Image(systemName: "checkmark")
-						.padding(8)
-				}.buttonStyle(BorderedProminentButtonStyle())
+					Text("Save").padding(8)
+						.frame(width: 100)
+				}
+				
+				.buttonStyle(BorderedProminentButtonStyle())
+				.disabled(itemMarkerViewModel.itemName.isEmpty)
+				
 			}
 		}
 		.frame(maxWidth: maxWidth)

@@ -25,15 +25,15 @@ extension Color{
 	}
 	
 	func toHex() -> String {
-		guard let components = self.cgColor?.components else {
-			return ""
+		guard let color = UIColor(self).cgColor.components else {
+			return "#000000" // Return black if color cannot be converted
 		}
 		
-		let r = Int(components[0] * 255.0)
-		let g = Int(components[1] * 255.0)
-		let b = Int(components[2] * 255.0)
+		let red = Int(color[0] * 255.0)
+		let green = Int(color[1] * 255.0)
+		let blue = Int(color[2] * 255.0)
 		
-		return String(format: "#%02X%02X%02X", r, g, b)
+		return String(format: "#%02X%02X%02X", red, green, blue)
 	}
 
 }
