@@ -1,0 +1,672 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A108D262A96719200CF5AF9 /* BagMapperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D252A96719200CF5AF9 /* BagMapperApp.swift */; };
+		5A108D282A96719200CF5AF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D272A96719200CF5AF9 /* ContentView.swift */; };
+		5A108D2A2A96719200CF5AF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A108D292A96719200CF5AF9 /* Assets.xcassets */; };
+		5A108D2D2A96719200CF5AF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A108D2C2A96719200CF5AF9 /* Preview Assets.xcassets */; };
+		5A108D732A9671C000CF5AF9 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D342A9671BF00CF5AF9 /* ImagePickerController.swift */; };
+		5A108D742A9671C000CF5AF9 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D362A9671BF00CF5AF9 /* Color+Extension.swift */; };
+		5A108D752A9671C000CF5AF9 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D382A9671BF00CF5AF9 /* DataHelper.swift */; };
+		5A108D762A9671C000CF5AF9 /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D392A9671BF00CF5AF9 /* ServiceResponse.swift */; };
+		5A108D772A9671C000CF5AF9 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D3A2A9671BF00CF5AF9 /* ImageHelper.swift */; };
+		5A108D782A9671C000CF5AF9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D3C2A9671C000CF5AF9 /* Item.swift */; };
+		5A108D792A9671C000CF5AF9 /* ItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D3D2A9671C000CF5AF9 /* ItemLabel.swift */; };
+		5A108D7A2A9671C000CF5AF9 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D3E2A9671C000CF5AF9 /* AppSetting.swift */; };
+		5A108D7B2A9671C000CF5AF9 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D3F2A9671C000CF5AF9 /* Bag.swift */; };
+		5A108D7C2A9671C000CF5AF9 /* ItemMarkerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D412A9671C000CF5AF9 /* ItemMarkerViewModel.swift */; };
+		5A108D7D2A9671C000CF5AF9 /* MainLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D422A9671C000CF5AF9 /* MainLayoutViewModel.swift */; };
+		5A108D7E2A9671C000CF5AF9 /* AppGlobalStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D432A9671C000CF5AF9 /* AppGlobalStateViewModel.swift */; };
+		5A108D7F2A9671C000CF5AF9 /* BagItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D442A9671C000CF5AF9 /* BagItemViewModel.swift */; };
+		5A108D802A9671C000CF5AF9 /* LegendContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D452A9671C000CF5AF9 /* LegendContainerViewModel.swift */; };
+		5A108D812A9671C000CF5AF9 /* UpdateBagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D462A9671C000CF5AF9 /* UpdateBagViewModel.swift */; };
+		5A108D822A9671C000CF5AF9 /* AddBagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D472A9671C000CF5AF9 /* AddBagViewModel.swift */; };
+		5A108D832A9671C000CF5AF9 /* ItemMarkerContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D482A9671C000CF5AF9 /* ItemMarkerContainerViewModel.swift */; };
+		5A108D842A9671C000CF5AF9 /* BagMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D492A9671C000CF5AF9 /* BagMapViewModel.swift */; };
+		5A108D852A9671C000CF5AF9 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D4B2A9671C000CF5AF9 /* DataContainer.swift */; };
+		5A108D862A9671C000CF5AF9 /* StyledTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D4F2A9671C000CF5AF9 /* StyledTextEditor.swift */; };
+		5A108D872A9671C000CF5AF9 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D502A9671C000CF5AF9 /* StyledButton.swift */; };
+		5A108D882A9671C000CF5AF9 /* StyledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D512A9671C000CF5AF9 /* StyledTextField.swift */; };
+		5A108D892A9671C000CF5AF9 /* TextFieldStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D532A9671C000CF5AF9 /* TextFieldStyleModifier.swift */; };
+		5A108D8A2A9671C000CF5AF9 /* ButtonStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D542A9671C000CF5AF9 /* ButtonStyleModifier.swift */; };
+		5A108D8B2A9671C000CF5AF9 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D562A9671C000CF5AF9 /* AppImage.swift */; };
+		5A108D8C2A9671C000CF5AF9 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D572A9671C000CF5AF9 /* AppColor.swift */; };
+		5A108D8D2A9671C000CF5AF9 /* OnboardingSectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D5A2A9671C000CF5AF9 /* OnboardingSectionContainer.swift */; };
+		5A108D8E2A9671C000CF5AF9 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D5B2A9671C000CF5AF9 /* OnboardingView.swift */; };
+		5A108D8F2A9671C000CF5AF9 /* ActionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D5D2A9671C000CF5AF9 /* ActionContainer.swift */; };
+		5A108D902A9671C000CF5AF9 /* LegendContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D5E2A9671C000CF5AF9 /* LegendContainer.swift */; };
+		5A108D912A9671C000CF5AF9 /* LabelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D602A9671C000CF5AF9 /* LabelContainer.swift */; };
+		5A108D922A9671C000CF5AF9 /* LabelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D612A9671C000CF5AF9 /* LabelItemView.swift */; };
+		5A108D932A9671C000CF5AF9 /* NoBagSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D622A9671C000CF5AF9 /* NoBagSelectedView.swift */; };
+		5A108D942A9671C000CF5AF9 /* BagMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D632A9671C000CF5AF9 /* BagMapView.swift */; };
+		5A108D952A9671C000CF5AF9 /* ItemMarkerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D652A9671C000CF5AF9 /* ItemMarkerContainer.swift */; };
+		5A108D962A9671C000CF5AF9 /* UpdateMarkerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D662A9671C000CF5AF9 /* UpdateMarkerSheet.swift */; };
+		5A108D972A9671C000CF5AF9 /* ItemMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D672A9671C000CF5AF9 /* ItemMarkerView.swift */; };
+		5A108D982A9671C000CF5AF9 /* BagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D692A9671C000CF5AF9 /* BagListView.swift */; };
+		5A108D992A9671C000CF5AF9 /* AddBagSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D6A2A9671C000CF5AF9 /* AddBagSheet.swift */; };
+		5A108D9A2A9671C000CF5AF9 /* BagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D6B2A9671C000CF5AF9 /* BagItemView.swift */; };
+		5A108D9B2A9671C000CF5AF9 /* UpdateBagSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D6C2A9671C000CF5AF9 /* UpdateBagSheet.swift */; };
+		5A108D9C2A9671C000CF5AF9 /* MainLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D6D2A9671C000CF5AF9 /* MainLayout.swift */; };
+		5A108D9D2A9671C000CF5AF9 /* AppSettingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D6F2A9671C000CF5AF9 /* AppSettingService.swift */; };
+		5A108D9E2A9671C000CF5AF9 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D702A9671C000CF5AF9 /* ItemService.swift */; };
+		5A108D9F2A9671C000CF5AF9 /* ItemLabelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D712A9671C000CF5AF9 /* ItemLabelService.swift */; };
+		5A108DA02A9671C000CF5AF9 /* BagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D722A9671C000CF5AF9 /* BagService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5A108D222A96719200CF5AF9 /* Bag Mapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bag Mapper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A108D252A96719200CF5AF9 /* BagMapperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagMapperApp.swift; sourceTree = "<group>"; };
+		5A108D272A96719200CF5AF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5A108D292A96719200CF5AF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A108D2C2A96719200CF5AF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A108D342A9671BF00CF5AF9 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		5A108D362A9671BF00CF5AF9 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		5A108D382A9671BF00CF5AF9 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		5A108D392A9671BF00CF5AF9 /* ServiceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
+		5A108D3A2A9671BF00CF5AF9 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		5A108D3C2A9671C000CF5AF9 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		5A108D3D2A9671C000CF5AF9 /* ItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemLabel.swift; sourceTree = "<group>"; };
+		5A108D3E2A9671C000CF5AF9 /* AppSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
+		5A108D3F2A9671C000CF5AF9 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
+		5A108D412A9671C000CF5AF9 /* ItemMarkerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMarkerViewModel.swift; sourceTree = "<group>"; };
+		5A108D422A9671C000CF5AF9 /* MainLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLayoutViewModel.swift; sourceTree = "<group>"; };
+		5A108D432A9671C000CF5AF9 /* AppGlobalStateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppGlobalStateViewModel.swift; sourceTree = "<group>"; };
+		5A108D442A9671C000CF5AF9 /* BagItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagItemViewModel.swift; sourceTree = "<group>"; };
+		5A108D452A9671C000CF5AF9 /* LegendContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegendContainerViewModel.swift; sourceTree = "<group>"; };
+		5A108D462A9671C000CF5AF9 /* UpdateBagViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateBagViewModel.swift; sourceTree = "<group>"; };
+		5A108D472A9671C000CF5AF9 /* AddBagViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBagViewModel.swift; sourceTree = "<group>"; };
+		5A108D482A9671C000CF5AF9 /* ItemMarkerContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMarkerContainerViewModel.swift; sourceTree = "<group>"; };
+		5A108D492A9671C000CF5AF9 /* BagMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagMapViewModel.swift; sourceTree = "<group>"; };
+		5A108D4B2A9671C000CF5AF9 /* DataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
+		5A108D4F2A9671C000CF5AF9 /* StyledTextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledTextEditor.swift; sourceTree = "<group>"; };
+		5A108D502A9671C000CF5AF9 /* StyledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
+		5A108D512A9671C000CF5AF9 /* StyledTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledTextField.swift; sourceTree = "<group>"; };
+		5A108D532A9671C000CF5AF9 /* TextFieldStyleModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStyleModifier.swift; sourceTree = "<group>"; };
+		5A108D542A9671C000CF5AF9 /* ButtonStyleModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyleModifier.swift; sourceTree = "<group>"; };
+		5A108D562A9671C000CF5AF9 /* AppImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
+		5A108D572A9671C000CF5AF9 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		5A108D5A2A9671C000CF5AF9 /* OnboardingSectionContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSectionContainer.swift; sourceTree = "<group>"; };
+		5A108D5B2A9671C000CF5AF9 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		5A108D5D2A9671C000CF5AF9 /* ActionContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionContainer.swift; sourceTree = "<group>"; };
+		5A108D5E2A9671C000CF5AF9 /* LegendContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegendContainer.swift; sourceTree = "<group>"; };
+		5A108D602A9671C000CF5AF9 /* LabelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelContainer.swift; sourceTree = "<group>"; };
+		5A108D612A9671C000CF5AF9 /* LabelItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelItemView.swift; sourceTree = "<group>"; };
+		5A108D622A9671C000CF5AF9 /* NoBagSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoBagSelectedView.swift; sourceTree = "<group>"; };
+		5A108D632A9671C000CF5AF9 /* BagMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagMapView.swift; sourceTree = "<group>"; };
+		5A108D652A9671C000CF5AF9 /* ItemMarkerContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMarkerContainer.swift; sourceTree = "<group>"; };
+		5A108D662A9671C000CF5AF9 /* UpdateMarkerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateMarkerSheet.swift; sourceTree = "<group>"; };
+		5A108D672A9671C000CF5AF9 /* ItemMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMarkerView.swift; sourceTree = "<group>"; };
+		5A108D692A9671C000CF5AF9 /* BagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagListView.swift; sourceTree = "<group>"; };
+		5A108D6A2A9671C000CF5AF9 /* AddBagSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBagSheet.swift; sourceTree = "<group>"; };
+		5A108D6B2A9671C000CF5AF9 /* BagItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagItemView.swift; sourceTree = "<group>"; };
+		5A108D6C2A9671C000CF5AF9 /* UpdateBagSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateBagSheet.swift; sourceTree = "<group>"; };
+		5A108D6D2A9671C000CF5AF9 /* MainLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLayout.swift; sourceTree = "<group>"; };
+		5A108D6F2A9671C000CF5AF9 /* AppSettingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingService.swift; sourceTree = "<group>"; };
+		5A108D702A9671C000CF5AF9 /* ItemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
+		5A108D712A9671C000CF5AF9 /* ItemLabelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemLabelService.swift; sourceTree = "<group>"; };
+		5A108D722A9671C000CF5AF9 /* BagService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A108D1F2A96719200CF5AF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A108D192A96719200CF5AF9 = {
+			isa = PBXGroup;
+			children = (
+				5A108D242A96719200CF5AF9 /* Bag Mapper */,
+				5A108D232A96719200CF5AF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5A108D232A96719200CF5AF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D222A96719200CF5AF9 /* Bag Mapper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A108D242A96719200CF5AF9 /* Bag Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D4A2A9671C000CF5AF9 /* Data */,
+				5A108D352A9671BF00CF5AF9 /* Extension */,
+				5A108D372A9671BF00CF5AF9 /* Helper */,
+				5A108D3B2A9671C000CF5AF9 /* Model */,
+				5A108D6E2A9671C000CF5AF9 /* Service */,
+				5A108D4C2A9671C000CF5AF9 /* View */,
+				5A108D332A9671BF00CF5AF9 /* ViewController */,
+				5A108D402A9671C000CF5AF9 /* ViewModel */,
+				5A108D252A96719200CF5AF9 /* BagMapperApp.swift */,
+				5A108D272A96719200CF5AF9 /* ContentView.swift */,
+				5A108D292A96719200CF5AF9 /* Assets.xcassets */,
+				5A108D2B2A96719200CF5AF9 /* Preview Content */,
+			);
+			path = "Bag Mapper";
+			sourceTree = "<group>";
+		};
+		5A108D2B2A96719200CF5AF9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D2C2A96719200CF5AF9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5A108D332A9671BF00CF5AF9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D342A9671BF00CF5AF9 /* ImagePickerController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5A108D352A9671BF00CF5AF9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D362A9671BF00CF5AF9 /* Color+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5A108D372A9671BF00CF5AF9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D382A9671BF00CF5AF9 /* DataHelper.swift */,
+				5A108D392A9671BF00CF5AF9 /* ServiceResponse.swift */,
+				5A108D3A2A9671BF00CF5AF9 /* ImageHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		5A108D3B2A9671C000CF5AF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D3C2A9671C000CF5AF9 /* Item.swift */,
+				5A108D3D2A9671C000CF5AF9 /* ItemLabel.swift */,
+				5A108D3E2A9671C000CF5AF9 /* AppSetting.swift */,
+				5A108D3F2A9671C000CF5AF9 /* Bag.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A108D402A9671C000CF5AF9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D412A9671C000CF5AF9 /* ItemMarkerViewModel.swift */,
+				5A108D422A9671C000CF5AF9 /* MainLayoutViewModel.swift */,
+				5A108D432A9671C000CF5AF9 /* AppGlobalStateViewModel.swift */,
+				5A108D442A9671C000CF5AF9 /* BagItemViewModel.swift */,
+				5A108D452A9671C000CF5AF9 /* LegendContainerViewModel.swift */,
+				5A108D462A9671C000CF5AF9 /* UpdateBagViewModel.swift */,
+				5A108D472A9671C000CF5AF9 /* AddBagViewModel.swift */,
+				5A108D482A9671C000CF5AF9 /* ItemMarkerContainerViewModel.swift */,
+				5A108D492A9671C000CF5AF9 /* BagMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5A108D4A2A9671C000CF5AF9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D4B2A9671C000CF5AF9 /* DataContainer.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5A108D4C2A9671C000CF5AF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D4D2A9671C000CF5AF9 /* Style */,
+				5A108D552A9671C000CF5AF9 /* Assets */,
+				5A108D582A9671C000CF5AF9 /* Pages */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A108D4D2A9671C000CF5AF9 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D4E2A9671C000CF5AF9 /* StyledComponents */,
+				5A108D522A9671C000CF5AF9 /* StyleModifiers */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		5A108D4E2A9671C000CF5AF9 /* StyledComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D4F2A9671C000CF5AF9 /* StyledTextEditor.swift */,
+				5A108D502A9671C000CF5AF9 /* StyledButton.swift */,
+				5A108D512A9671C000CF5AF9 /* StyledTextField.swift */,
+			);
+			path = StyledComponents;
+			sourceTree = "<group>";
+		};
+		5A108D522A9671C000CF5AF9 /* StyleModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D532A9671C000CF5AF9 /* TextFieldStyleModifier.swift */,
+				5A108D542A9671C000CF5AF9 /* ButtonStyleModifier.swift */,
+			);
+			path = StyleModifiers;
+			sourceTree = "<group>";
+		};
+		5A108D552A9671C000CF5AF9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D562A9671C000CF5AF9 /* AppImage.swift */,
+				5A108D572A9671C000CF5AF9 /* AppColor.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5A108D582A9671C000CF5AF9 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D592A9671C000CF5AF9 /* InitialPage */,
+				5A108D5C2A9671C000CF5AF9 /* BagMapPage */,
+				5A108D682A9671C000CF5AF9 /* BagListPage */,
+				5A108D6D2A9671C000CF5AF9 /* MainLayout.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		5A108D592A9671C000CF5AF9 /* InitialPage */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D5A2A9671C000CF5AF9 /* OnboardingSectionContainer.swift */,
+				5A108D5B2A9671C000CF5AF9 /* OnboardingView.swift */,
+			);
+			path = InitialPage;
+			sourceTree = "<group>";
+		};
+		5A108D5C2A9671C000CF5AF9 /* BagMapPage */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D5D2A9671C000CF5AF9 /* ActionContainer.swift */,
+				5A108D5E2A9671C000CF5AF9 /* LegendContainer.swift */,
+				5A108D5F2A9671C000CF5AF9 /* Label */,
+				5A108D622A9671C000CF5AF9 /* NoBagSelectedView.swift */,
+				5A108D632A9671C000CF5AF9 /* BagMapView.swift */,
+				5A108D642A9671C000CF5AF9 /* ItemMarker */,
+			);
+			path = BagMapPage;
+			sourceTree = "<group>";
+		};
+		5A108D5F2A9671C000CF5AF9 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D602A9671C000CF5AF9 /* LabelContainer.swift */,
+				5A108D612A9671C000CF5AF9 /* LabelItemView.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		5A108D642A9671C000CF5AF9 /* ItemMarker */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D652A9671C000CF5AF9 /* ItemMarkerContainer.swift */,
+				5A108D662A9671C000CF5AF9 /* UpdateMarkerSheet.swift */,
+				5A108D672A9671C000CF5AF9 /* ItemMarkerView.swift */,
+			);
+			path = ItemMarker;
+			sourceTree = "<group>";
+		};
+		5A108D682A9671C000CF5AF9 /* BagListPage */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D692A9671C000CF5AF9 /* BagListView.swift */,
+				5A108D6A2A9671C000CF5AF9 /* AddBagSheet.swift */,
+				5A108D6B2A9671C000CF5AF9 /* BagItemView.swift */,
+				5A108D6C2A9671C000CF5AF9 /* UpdateBagSheet.swift */,
+			);
+			path = BagListPage;
+			sourceTree = "<group>";
+		};
+		5A108D6E2A9671C000CF5AF9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5A108D6F2A9671C000CF5AF9 /* AppSettingService.swift */,
+				5A108D702A9671C000CF5AF9 /* ItemService.swift */,
+				5A108D712A9671C000CF5AF9 /* ItemLabelService.swift */,
+				5A108D722A9671C000CF5AF9 /* BagService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A108D212A96719200CF5AF9 /* Bag Mapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A108D302A96719200CF5AF9 /* Build configuration list for PBXNativeTarget "Bag Mapper" */;
+			buildPhases = (
+				5A108D1E2A96719200CF5AF9 /* Sources */,
+				5A108D1F2A96719200CF5AF9 /* Frameworks */,
+				5A108D202A96719200CF5AF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bag Mapper";
+			productName = "Bag Mapper";
+			productReference = 5A108D222A96719200CF5AF9 /* Bag Mapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A108D1A2A96719200CF5AF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5A108D212A96719200CF5AF9 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 5A108D1D2A96719200CF5AF9 /* Build configuration list for PBXProject "Bag Mapper" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A108D192A96719200CF5AF9;
+			productRefGroup = 5A108D232A96719200CF5AF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A108D212A96719200CF5AF9 /* Bag Mapper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A108D202A96719200CF5AF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A108D2D2A96719200CF5AF9 /* Preview Assets.xcassets in Resources */,
+				5A108D2A2A96719200CF5AF9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A108D1E2A96719200CF5AF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A108D9B2A9671C000CF5AF9 /* UpdateBagSheet.swift in Sources */,
+				5A108D962A9671C000CF5AF9 /* UpdateMarkerSheet.swift in Sources */,
+				5A108D9C2A9671C000CF5AF9 /* MainLayout.swift in Sources */,
+				5A108D7F2A9671C000CF5AF9 /* BagItemViewModel.swift in Sources */,
+				5A108D7A2A9671C000CF5AF9 /* AppSetting.swift in Sources */,
+				5A108D902A9671C000CF5AF9 /* LegendContainer.swift in Sources */,
+				5A108DA02A9671C000CF5AF9 /* BagService.swift in Sources */,
+				5A108D952A9671C000CF5AF9 /* ItemMarkerContainer.swift in Sources */,
+				5A108D852A9671C000CF5AF9 /* DataContainer.swift in Sources */,
+				5A108D8F2A9671C000CF5AF9 /* ActionContainer.swift in Sources */,
+				5A108D8E2A9671C000CF5AF9 /* OnboardingView.swift in Sources */,
+				5A108D762A9671C000CF5AF9 /* ServiceResponse.swift in Sources */,
+				5A108D872A9671C000CF5AF9 /* StyledButton.swift in Sources */,
+				5A108D7B2A9671C000CF5AF9 /* Bag.swift in Sources */,
+				5A108D8D2A9671C000CF5AF9 /* OnboardingSectionContainer.swift in Sources */,
+				5A108D972A9671C000CF5AF9 /* ItemMarkerView.swift in Sources */,
+				5A108D922A9671C000CF5AF9 /* LabelItemView.swift in Sources */,
+				5A108D9A2A9671C000CF5AF9 /* BagItemView.swift in Sources */,
+				5A108D282A96719200CF5AF9 /* ContentView.swift in Sources */,
+				5A108D822A9671C000CF5AF9 /* AddBagViewModel.swift in Sources */,
+				5A108D992A9671C000CF5AF9 /* AddBagSheet.swift in Sources */,
+				5A108D812A9671C000CF5AF9 /* UpdateBagViewModel.swift in Sources */,
+				5A108D7D2A9671C000CF5AF9 /* MainLayoutViewModel.swift in Sources */,
+				5A108D732A9671C000CF5AF9 /* ImagePickerController.swift in Sources */,
+				5A108D862A9671C000CF5AF9 /* StyledTextEditor.swift in Sources */,
+				5A108D802A9671C000CF5AF9 /* LegendContainerViewModel.swift in Sources */,
+				5A108D982A9671C000CF5AF9 /* BagListView.swift in Sources */,
+				5A108D262A96719200CF5AF9 /* BagMapperApp.swift in Sources */,
+				5A108D782A9671C000CF5AF9 /* Item.swift in Sources */,
+				5A108D9D2A9671C000CF5AF9 /* AppSettingService.swift in Sources */,
+				5A108D742A9671C000CF5AF9 /* Color+Extension.swift in Sources */,
+				5A108D7E2A9671C000CF5AF9 /* AppGlobalStateViewModel.swift in Sources */,
+				5A108D9F2A9671C000CF5AF9 /* ItemLabelService.swift in Sources */,
+				5A108D8C2A9671C000CF5AF9 /* AppColor.swift in Sources */,
+				5A108D792A9671C000CF5AF9 /* ItemLabel.swift in Sources */,
+				5A108D8A2A9671C000CF5AF9 /* ButtonStyleModifier.swift in Sources */,
+				5A108D9E2A9671C000CF5AF9 /* ItemService.swift in Sources */,
+				5A108D832A9671C000CF5AF9 /* ItemMarkerContainerViewModel.swift in Sources */,
+				5A108D932A9671C000CF5AF9 /* NoBagSelectedView.swift in Sources */,
+				5A108D842A9671C000CF5AF9 /* BagMapViewModel.swift in Sources */,
+				5A108D892A9671C000CF5AF9 /* TextFieldStyleModifier.swift in Sources */,
+				5A108D7C2A9671C000CF5AF9 /* ItemMarkerViewModel.swift in Sources */,
+				5A108D752A9671C000CF5AF9 /* DataHelper.swift in Sources */,
+				5A108D882A9671C000CF5AF9 /* StyledTextField.swift in Sources */,
+				5A108D772A9671C000CF5AF9 /* ImageHelper.swift in Sources */,
+				5A108D912A9671C000CF5AF9 /* LabelContainer.swift in Sources */,
+				5A108D942A9671C000CF5AF9 /* BagMapView.swift in Sources */,
+				5A108D8B2A9671C000CF5AF9 /* AppImage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5A108D2E2A96719200CF5AF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5A108D2F2A96719200CF5AF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A108D312A96719200CF5AF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bag Mapper/Preview Content\"";
+				DEVELOPMENT_TEAM = 2SQJ3VS7UD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Adin.Bag-Mapper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A108D322A96719200CF5AF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bag Mapper/Preview Content\"";
+				DEVELOPMENT_TEAM = 2SQJ3VS7UD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Adin.Bag-Mapper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A108D1D2A96719200CF5AF9 /* Build configuration list for PBXProject "Bag Mapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A108D2E2A96719200CF5AF9 /* Debug */,
+				5A108D2F2A96719200CF5AF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A108D302A96719200CF5AF9 /* Build configuration list for PBXNativeTarget "Bag Mapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A108D312A96719200CF5AF9 /* Debug */,
+				5A108D322A96719200CF5AF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A108D1A2A96719200CF5AF9 /* Project object */;
+}
