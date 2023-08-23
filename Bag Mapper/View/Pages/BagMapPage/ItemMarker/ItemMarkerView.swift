@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  ItemMarkerView.swift
 //  
 //
 //  Created by Alidin on 19/04/23.
@@ -49,7 +49,8 @@ struct ItemMarkerView: View {
 					UpdateMarkerSheet(
 						itemMarkerViewModel : itemMarkerViewModel,
 						item: $item,
-						maxWidth : 320)
+						maxWidth : 320).environmentObject(mainLayoutViewModel)
+					
 				}
 				.sheet(isPresented: $itemMarkerViewModel.isSheetVisible) {
 					UpdateMarkerSheet(

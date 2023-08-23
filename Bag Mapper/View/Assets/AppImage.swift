@@ -1,11 +1,9 @@
 //
-//  File.swift
+//  AppImage.swift
 //  
 //
 //  Created by Alidin on 21/08/23.
 //
-
-import Foundation
 
 class AppImage{
 	static let ICON_ASK = "iconAsk"

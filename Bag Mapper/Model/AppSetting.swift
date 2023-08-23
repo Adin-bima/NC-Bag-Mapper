@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  AppSetting.swift
 //  
 //
 //  Created by Alidin on 19/04/23.

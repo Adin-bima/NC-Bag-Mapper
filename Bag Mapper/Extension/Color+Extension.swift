@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Color+Extension.swift
 //  
 //
 //  Created by Alidin on 23/08/23.
@@ -10,12 +10,12 @@ import SwiftUI
 
 extension Color{
 	init(hex: String) {
-		let scanner = Scanner(string: hex)
-		_ = scanner.scanString("#")
+		var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+		hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
 		
 		var rgb: UInt64 = 0
 		
-		scanner.scanHexInt64(&rgb)
+		Scanner(string: hexSanitized).scanHexInt64(&rgb)
 		
 		let red = Double((rgb & 0xFF0000) >> 16) / 255.0
 		let green = Double((rgb & 0x00FF00) >> 8) / 255.0
@@ -25,11 +25,15 @@ extension Color{
 	}
 	
 	func toHex() -> String {
-		let components = self.cgColor?.components
-		let r = UInt8((components?[0] ?? 0.0) * 255)
-		let g = UInt8((components?[1] ?? 0.0) * 255)
-		let b = UInt8((components?[2] ?? 0.0) * 255)
+		guard let components = self.cgColor?.components else {
+			return ""
+		}
+		
+		let r = Int(components[0] * 255.0)
+		let g = Int(components[1] * 255.0)
+		let b = Int(components[2] * 255.0)
 		
 		return String(format: "#%02X%02X%02X", r, g, b)
 	}
+
 }

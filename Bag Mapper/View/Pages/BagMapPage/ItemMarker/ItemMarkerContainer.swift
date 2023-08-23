@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  ItemMarkerContainer.swift
 //  
 //
 //  Created by Alidin on 21/08/23.
@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-struct ItemMarkerContainer: View {
-	@EnvironmentObject var mainLayoutViewModel : MainLayoutViewModel
-	
+struct ItemMarkerContainer: View {	
 	@ObservedObject var bagMapViewModel : BagMapViewModel
 	@StateObject var itemMarkerContainerViewModel = ItemMarkerContainerViewModel()
 	@Binding var bag : Bag
@@ -53,7 +51,7 @@ struct ItemMarkerContainer: View {
 													bagMapViewModel.focusedItemId = item.id
 												}
 											)
-//											.environmentObject(mainLayoutViewModel)
+											
 										}
 									}
 								}

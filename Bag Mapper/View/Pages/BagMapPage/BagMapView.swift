@@ -1,6 +1,6 @@
 
 //
-//  SwiftUIView.swift
+//  BagMapView.swift
 //
 //
 //  Created by Alidin on 17/04/23.
@@ -20,7 +20,7 @@ struct BagMapView : View{
 		GeometryReader{
 			mainGeometry in
 			ZStack(){
-				ItemMarkerContainer(bagMapViewModel: bagMapViewModel, bag: $bag).environmentObject(mainLayoutViewModel)
+				ItemMarkerContainer(bagMapViewModel: bagMapViewModel, bag: $bag)
 				
 				LegendContainer(
 					bag:$bag,

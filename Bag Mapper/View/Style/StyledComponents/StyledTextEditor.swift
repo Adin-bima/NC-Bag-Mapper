@@ -1,11 +1,10 @@
 //
-//  File.swift
+//  StyledTextEditor.swift
 //  
 //
 //  Created by Alidin on 21/08/23.
 //
 
-import Foundation
 import SwiftUI
 
 extension TextEditor{

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5A108D262A96719200CF5AF9 /* BagMapperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D252A96719200CF5AF9 /* BagMapperApp.swift */; };
-		5A108D282A96719200CF5AF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D272A96719200CF5AF9 /* ContentView.swift */; };
 		5A108D2A2A96719200CF5AF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A108D292A96719200CF5AF9 /* Assets.xcassets */; };
 		5A108D2D2A96719200CF5AF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A108D2C2A96719200CF5AF9 /* Preview Assets.xcassets */; };
 		5A108D732A9671C000CF5AF9 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D342A9671BF00CF5AF9 /* ImagePickerController.swift */; };
@@ -29,7 +28,6 @@
 		5A108D822A9671C000CF5AF9 /* AddBagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D472A9671C000CF5AF9 /* AddBagViewModel.swift */; };
 		5A108D832A9671C000CF5AF9 /* ItemMarkerContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D482A9671C000CF5AF9 /* ItemMarkerContainerViewModel.swift */; };
 		5A108D842A9671C000CF5AF9 /* BagMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D492A9671C000CF5AF9 /* BagMapViewModel.swift */; };
-		5A108D852A9671C000CF5AF9 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D4B2A9671C000CF5AF9 /* DataContainer.swift */; };
 		5A108D862A9671C000CF5AF9 /* StyledTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D4F2A9671C000CF5AF9 /* StyledTextEditor.swift */; };
 		5A108D872A9671C000CF5AF9 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D502A9671C000CF5AF9 /* StyledButton.swift */; };
 		5A108D882A9671C000CF5AF9 /* StyledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A108D512A9671C000CF5AF9 /* StyledTextField.swift */; };
@@ -62,7 +60,6 @@
 /* Begin PBXFileReference section */
 		5A108D222A96719200CF5AF9 /* Bag Mapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bag Mapper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A108D252A96719200CF5AF9 /* BagMapperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagMapperApp.swift; sourceTree = "<group>"; };
-		5A108D272A96719200CF5AF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5A108D292A96719200CF5AF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A108D2C2A96719200CF5AF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A108D342A9671BF00CF5AF9 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
@@ -83,7 +80,6 @@
 		5A108D472A9671C000CF5AF9 /* AddBagViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBagViewModel.swift; sourceTree = "<group>"; };
 		5A108D482A9671C000CF5AF9 /* ItemMarkerContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMarkerContainerViewModel.swift; sourceTree = "<group>"; };
 		5A108D492A9671C000CF5AF9 /* BagMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagMapViewModel.swift; sourceTree = "<group>"; };
-		5A108D4B2A9671C000CF5AF9 /* DataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		5A108D4F2A9671C000CF5AF9 /* StyledTextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledTextEditor.swift; sourceTree = "<group>"; };
 		5A108D502A9671C000CF5AF9 /* StyledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
 		5A108D512A9671C000CF5AF9 /* StyledTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledTextField.swift; sourceTree = "<group>"; };
@@ -143,7 +139,6 @@
 		5A108D242A96719200CF5AF9 /* Bag Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				5A108D4A2A9671C000CF5AF9 /* Data */,
 				5A108D352A9671BF00CF5AF9 /* Extension */,
 				5A108D372A9671BF00CF5AF9 /* Helper */,
 				5A108D3B2A9671C000CF5AF9 /* Model */,
@@ -152,7 +147,6 @@
 				5A108D332A9671BF00CF5AF9 /* ViewController */,
 				5A108D402A9671C000CF5AF9 /* ViewModel */,
 				5A108D252A96719200CF5AF9 /* BagMapperApp.swift */,
-				5A108D272A96719200CF5AF9 /* ContentView.swift */,
 				5A108D292A96719200CF5AF9 /* Assets.xcassets */,
 				5A108D2B2A96719200CF5AF9 /* Preview Content */,
 			);
@@ -218,14 +212,6 @@
 				5A108D492A9671C000CF5AF9 /* BagMapViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		5A108D4A2A9671C000CF5AF9 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				5A108D4B2A9671C000CF5AF9 /* DataContainer.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		5A108D4C2A9671C000CF5AF9 /* View */ = {
@@ -427,7 +413,6 @@
 				5A108D902A9671C000CF5AF9 /* LegendContainer.swift in Sources */,
 				5A108DA02A9671C000CF5AF9 /* BagService.swift in Sources */,
 				5A108D952A9671C000CF5AF9 /* ItemMarkerContainer.swift in Sources */,
-				5A108D852A9671C000CF5AF9 /* DataContainer.swift in Sources */,
 				5A108D8F2A9671C000CF5AF9 /* ActionContainer.swift in Sources */,
 				5A108D8E2A9671C000CF5AF9 /* OnboardingView.swift in Sources */,
 				5A108D762A9671C000CF5AF9 /* ServiceResponse.swift in Sources */,
@@ -437,7 +422,6 @@
 				5A108D972A9671C000CF5AF9 /* ItemMarkerView.swift in Sources */,
 				5A108D922A9671C000CF5AF9 /* LabelItemView.swift in Sources */,
 				5A108D9A2A9671C000CF5AF9 /* BagItemView.swift in Sources */,
-				5A108D282A96719200CF5AF9 /* ContentView.swift in Sources */,
 				5A108D822A9671C000CF5AF9 /* AddBagViewModel.swift in Sources */,
 				5A108D992A9671C000CF5AF9 /* AddBagSheet.swift in Sources */,
 				5A108D812A9671C000CF5AF9 /* UpdateBagViewModel.swift in Sources */,
@@ -598,6 +582,7 @@
 				DEVELOPMENT_TEAM = 2SQJ3VS7UD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow Bag Mapper app to use camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -627,6 +612,7 @@
 				DEVELOPMENT_TEAM = 2SQJ3VS7UD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow Bag Mapper app to use camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
