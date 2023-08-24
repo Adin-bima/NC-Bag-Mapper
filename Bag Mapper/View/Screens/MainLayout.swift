@@ -16,16 +16,19 @@ struct MainLayout : View{
 		NavigationSplitView() {
 			BagListView()
 				.environmentObject(mainLayoutViewModel)
-				.navigationTitle("My Bags")
+			
 				.navigationBarItems(
-					trailing: // Add the "+" button to the trailing side of the navigation bar
-					Button(action: {
-						mainLayoutViewModel.isShowingAddBagModal = true
-					}, label: {
-						Image(systemName: "plus")
-					})
+					leading :
+						Text("My Bags").font(.largeTitle).bold() // Your navigation title
+					,
+					trailing :
+						Button(action: {
+							mainLayoutViewModel.isShowingAddBagModal = true
+						}, label: {
+							Image(systemName: "plus")
+						})
 				)
-				
+			
 		} detail: {
 			NoBagSelectedView()
 				.navigationBarBackButtonHidden()

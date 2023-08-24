@@ -33,6 +33,7 @@ struct LegendContainer: View {
 					.frame(height: 80)
 					.background(Color.white.opacity(0.8))
 					.cornerRadius(8)
+					.shadow(radius: 5)
 					.padding(.top, 8)
 					.padding(.trailing, 8)
 			}
@@ -105,6 +106,7 @@ struct LegendContainer: View {
 				.frame(width: isOpened ? 200 : 0, height: 300)
 				.background(Color.white)
 				.cornerRadius(8)
+				.shadow(radius: 5)
 				.padding(.trailing, isOpened ? 8 : 0) // Add padding based on isOpened
 				.transition(AnyTransition.move(edge: .trailing))
 				.opacity(0.8)

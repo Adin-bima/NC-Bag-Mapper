@@ -139,6 +139,8 @@
 		5A108D242A96719200CF5AF9 /* Bag Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				5A108D252A96719200CF5AF9 /* BagMapperApp.swift */,
+				5A108D292A96719200CF5AF9 /* Assets.xcassets */,
 				5A108D352A9671BF00CF5AF9 /* Extension */,
 				5A108D372A9671BF00CF5AF9 /* Helper */,
 				5A108D3B2A9671C000CF5AF9 /* Model */,
@@ -146,8 +148,6 @@
 				5A108D4C2A9671C000CF5AF9 /* View */,
 				5A108D332A9671BF00CF5AF9 /* ViewController */,
 				5A108D402A9671C000CF5AF9 /* ViewModel */,
-				5A108D252A96719200CF5AF9 /* BagMapperApp.swift */,
-				5A108D292A96719200CF5AF9 /* Assets.xcassets */,
 				5A108D2B2A96719200CF5AF9 /* Preview Content */,
 			);
 			path = "Bag Mapper";
@@ -219,7 +219,7 @@
 			children = (
 				5A108D4D2A9671C000CF5AF9 /* Style */,
 				5A108D552A9671C000CF5AF9 /* Assets */,
-				5A108D582A9671C000CF5AF9 /* Pages */,
+				5A108D582A9671C000CF5AF9 /* Screens */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,27 +261,27 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		5A108D582A9671C000CF5AF9 /* Pages */ = {
+		5A108D582A9671C000CF5AF9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				5A108D592A9671C000CF5AF9 /* InitialPage */,
-				5A108D5C2A9671C000CF5AF9 /* BagMapPage */,
-				5A108D682A9671C000CF5AF9 /* BagListPage */,
+				5A108D592A9671C000CF5AF9 /* InitialScreen */,
+				5A108D5C2A9671C000CF5AF9 /* BagMapScreen */,
+				5A108D682A9671C000CF5AF9 /* BagListScreen */,
 				5A108D6D2A9671C000CF5AF9 /* MainLayout.swift */,
 			);
-			path = Pages;
+			path = Screens;
 			sourceTree = "<group>";
 		};
-		5A108D592A9671C000CF5AF9 /* InitialPage */ = {
+		5A108D592A9671C000CF5AF9 /* InitialScreen */ = {
 			isa = PBXGroup;
 			children = (
 				5A108D5A2A9671C000CF5AF9 /* OnboardingSectionContainer.swift */,
 				5A108D5B2A9671C000CF5AF9 /* OnboardingView.swift */,
 			);
-			path = InitialPage;
+			path = InitialScreen;
 			sourceTree = "<group>";
 		};
-		5A108D5C2A9671C000CF5AF9 /* BagMapPage */ = {
+		5A108D5C2A9671C000CF5AF9 /* BagMapScreen */ = {
 			isa = PBXGroup;
 			children = (
 				5A108D5D2A9671C000CF5AF9 /* ActionContainer.swift */,
@@ -291,7 +291,7 @@
 				5A108D632A9671C000CF5AF9 /* BagMapView.swift */,
 				5A108D642A9671C000CF5AF9 /* ItemMarker */,
 			);
-			path = BagMapPage;
+			path = BagMapScreen;
 			sourceTree = "<group>";
 		};
 		5A108D5F2A9671C000CF5AF9 /* Label */ = {
@@ -313,7 +313,7 @@
 			path = ItemMarker;
 			sourceTree = "<group>";
 		};
-		5A108D682A9671C000CF5AF9 /* BagListPage */ = {
+		5A108D682A9671C000CF5AF9 /* BagListScreen */ = {
 			isa = PBXGroup;
 			children = (
 				5A108D692A9671C000CF5AF9 /* BagListView.swift */,
@@ -321,7 +321,7 @@
 				5A108D6B2A9671C000CF5AF9 /* BagItemView.swift */,
 				5A108D6C2A9671C000CF5AF9 /* UpdateBagSheet.swift */,
 			);
-			path = BagListPage;
+			path = BagListScreen;
 			sourceTree = "<group>";
 		};
 		5A108D6E2A9671C000CF5AF9 /* Service */ = {

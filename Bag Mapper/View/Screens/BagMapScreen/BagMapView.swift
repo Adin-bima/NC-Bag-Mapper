@@ -11,6 +11,7 @@ import SwiftUI
 
 struct BagMapView : View{
 	@EnvironmentObject var mainLayoutViewModel : MainLayoutViewModel
+	@Environment(\.horizontalSizeClass) var horizontalSizeClass
 	
 	@StateObject var bagMapViewModel = BagMapViewModel()
 	
@@ -46,7 +47,6 @@ struct BagMapView : View{
 			}
 			
 		}
-		.navigationTitle(bag.bagName)
 		.ignoresSafeArea(.keyboard)
 		.onAppear(){
 			bagMapViewModel.loadBagComponents(bagId: bag.id)
@@ -55,6 +55,10 @@ struct BagMapView : View{
 		.onChange(of: bag) { newBagValue in
 			bagMapViewModel.changeBagSelection(newBagValue: newBagValue)
 		}
+		.navigationBarHidden(horizontalSizeClass == .compact ? false : true)
+		.navigationTitle(bag.bagName)
+	
+		
 	}
 	
 	

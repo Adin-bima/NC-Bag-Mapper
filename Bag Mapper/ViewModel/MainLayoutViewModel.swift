@@ -15,13 +15,18 @@ class MainLayoutViewModel:ObservableObject{
 	
 	func loadAllBag(){
 		if let bagsData = BagService.shared.loadBags().data{
-			bags = bagsData
+			self.bags = bagsData.sorted(by: { b1, b2 in
+				b1.isFavorite && !b2.isFavorite
+			})
+			
 		}
+		
+	
 	}
 	
 	func loadAllLabels(){
 		if let labelsData = ItemLabelService.shared.LoadItemLabels().data{
-			labels = labelsData
+			self.labels = labelsData
 		}
 	}
 }

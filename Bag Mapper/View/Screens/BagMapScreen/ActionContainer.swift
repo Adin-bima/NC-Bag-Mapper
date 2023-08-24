@@ -35,6 +35,8 @@ struct ActionContainer: View {
 				 .background(Color.white)
 				 .opacity(0.8)
 				 .clipShape(Circle())
+				 .shadow(radius: 5)
+
 				 
 				 Button {
 					 withAnimation {
@@ -49,6 +51,8 @@ struct ActionContainer: View {
 				 .background(Color.white)
 				 .opacity(0.8)
 				 .clipShape(Circle())
+				 .shadow(radius: 5)
+
 				 
 				 Button {
 					 withAnimation {
@@ -63,6 +67,8 @@ struct ActionContainer: View {
 				 .background(Color.white)
 				 .opacity(0.8)
 				 .clipShape(Circle())
+				 .shadow(radius: 5)
+
 			 }
 			 .padding(.trailing, 8)
 			 .padding(.bottom, 8)

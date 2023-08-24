@@ -61,10 +61,10 @@ struct BagItemView: View {
 				}
 			}
 			.swipeActions(edge : .leading, allowsFullSwipe: false) {
-				swipeActions(for: .leading)
+				leadingSwipeAction()
 			}
 			.swipeActions(edge : .trailing, allowsFullSwipe: false){
-				swipeActions(for: .trailing)
+				trailingSwipeAction()
 			}
 			.alert(isPresented: $bagItemViewModel.isDeleting) {
 				Alert(title: Text("Delete Bag \(bag.bagName)"), message: Text("This action cannot be undone."), primaryButton: .destructive(Text("Delete")) {
@@ -78,15 +78,27 @@ struct BagItemView: View {
 			}
 	}
 	
-	private func swipeActions(for edge: Edge) -> some View {
+	private func leadingSwipeAction() -> some View {
 		return Group{
 			Button(action: {
 				bagItemViewModel.toggleFavorite(bag : $bag)
 			}) {
 				Image(systemName: bag.isFavorite ? "star.slash" : "star")
 			}
-			.tint(.secondary)
+			.tint(bag.isFavorite ? .secondary : .teal)
 		
+		}
+	}
+	
+	private func trailingSwipeAction() -> some View {
+		return Group{
+			Button(action: {
+				bagItemViewModel.isDeleting.toggle()
+			}) {
+				Image(systemName: "trash").foregroundColor(.red)
+			}
+			.tint(.red)
+			
 		}
 	}
 	
